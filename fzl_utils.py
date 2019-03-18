@@ -167,7 +167,7 @@ class prob(ilastik_mask):
 	def prob_threshold(self, seg_ID=1, threshmin=None, threshmax=0.5, plot_out=False):
 		'''
 		generate binary segmentation from probabilities
-			thresmax = value on [0,1] to assign seg_IDs from probabilities. values higher than threshmax for seg_ID -> 1.
+			threshmax = value on [0,1] to assign seg_IDs from probabilities. values higher than threshmax for seg_ID -> 1.
 				values lower than thresmax for seg_ID -> 0.
 		'''
 		a = bin_threshold(mat=self.data[seg_ID], threshmin=threshmin, threshmax=threshmax)
