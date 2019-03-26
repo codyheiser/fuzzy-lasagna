@@ -40,8 +40,24 @@ imp4 = WindowManager.getImage(names[1]);
 IJ.run(imp4, "Invert LUT", "");
 IJ.run(imp4, "Fill Holes", "");
 
-// create selection from mask and return to QuPath
+// select mask and send to ROI manager
 IJ.run(imp4, "Create Selection", "");
-IJ.run("Send ROI to QuPath", "");
+IJ.run(imp4, "Add Selection...", "");
+IJ.run("To ROI Manager", "");
+
+// in ROI Manager, split selection into individual cells
+rm = RoiManager.getInstance();
+rm.select(0); 
+rm.runCommand("Split"); // split selection of all cells
+rm.runCommand("Delete"); // delete selection of all cells
+rm.select(0); // select first cell from split
+
+// loop through cell ROIs and send to QuPath
+n_ROI = rm.getCount();
+for(i=1; i<n_ROI; i++){
+	rm.select(i);
+	IJ.run("Send ROI to QuPath", "");
+}
 
 IJ.run("Close All", "");
+rm.close();
