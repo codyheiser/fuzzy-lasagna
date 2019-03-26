@@ -8,6 +8,12 @@ importClass(Packages.ij.plugin.ImageCalculator);
 
 imp = IJ.getImage();
 
+// remove blue and green channels to segment only on red
+IJ.run(imp, "Next Slice [>]", "");
+IJ.run(imp, "Next Slice [>]", "");
+IJ.run(imp, "Delete Slice", "");
+IJ.run(imp, "Delete Slice", "");
+
 // segment by maxima in red channel and create mask
 IJ.run(imp, "Find Maxima...", "noise=20000 output=[Segmented Particles]"); // 'exclude' at end of string to exclude on edges
 
@@ -31,6 +37,7 @@ imp2.close();
 imp3.close();
 names = WindowManager.getImageTitles()
 imp4 = WindowManager.getImage(names[1]);
+IJ.run(imp4, "Invert LUT", "");
 IJ.run(imp4, "Fill Holes", "");
 
 // create selection from mask and return to QuPath
