@@ -1,4 +1,4 @@
-// process region from QuPath for red-channel tubules, select mask results and send back to QuPath
+// process region from QuPath for red-channel tubules, select resulting ROIs and send back to QuPath
 // @author: C Heiser
 // Mar19
 
@@ -14,11 +14,14 @@ IJ.run(imp, "Next Slice [>]", "");
 IJ.run(imp, "Delete Slice", "");
 IJ.run(imp, "Delete Slice", "");
 
+// perform gaussian blur filter to lower background
+IJ.run(imp, "Gaussian Blur...", "sigma=2");
+
 // segment by maxima in red channel and create mask
-IJ.run(imp, "Find Maxima...", "noise=20000 output=[Segmented Particles]"); // 'exclude' at end of string to exclude on edges
+IJ.run(imp, "Find Maxima...", "noise=16000 output=[Segmented Particles]"); // 'exclude' at end of string to exclude on edges
 
 // adjust threshold in red channel to get tubule areas in separate mask
-IJ.setRawThreshold(imp, 1500, 65535, null);
+IJ.setRawThreshold(imp, 2000, 65535, null);
 IJ.run(imp, "Smooth", "stack");
 Prefs.blackBackground = true;
 IJ.run(imp, "Convert to Mask", "method=Default");
@@ -31,8 +34,8 @@ ic = new ImageCalculator();
 imp3 = ic.run("AND create", imp1, imp2); // intersection of maxima and threshold
 imp3.show();
 
-// clean up by tubules 100 sq pixels or larger, invert selection and fill holes
-imp4 = IJ.run(imp3, "Analyze Particles...", "size=100-Infinity show=Masks");
+// clean up by tubules by size, invert selection and fill holes
+imp4 = IJ.run(imp3, "Analyze Particles...", "size=500-Infinity show=Masks");
 imp2.close();
 imp3.close();
 names = WindowManager.getImageTitles()
