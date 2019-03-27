@@ -5,6 +5,7 @@
 importClass(Packages.ij.IJ); 
 importClass(Packages.ij.WindowManager);
 importClass(Packages.ij.plugin.ImageCalculator);
+importClass(Packages.ij.gui.GenericDialog);
 
 imp = IJ.getImage();
 
@@ -50,17 +51,25 @@ IJ.run("To ROI Manager", "");
 
 // in ROI Manager, split selection into individual cells
 rm = RoiManager.getInstance();
-rm.select(0); 
-rm.runCommand("Split"); // split selection of all cells
-rm.runCommand("Delete"); // delete selection of all cells
-rm.select(0); // select first cell from split
+rm.select(0);
 
-// loop through cell ROIs and send to QuPath
-n_ROI = rm.getCount();
-for(i=1; i<n_ROI; i++){
-	rm.select(i);
-	IJ.run("Send ROI to QuPath", "");
+// surround in try-catch to continue if no ROIs are detected
+try {
+	rm.runCommand("Split"); // split selection of all cells
+	rm.runCommand("Delete"); // delete selection of all cells
+	rm.select(0); // select first cell from split
+
+	// loop through cell ROIs and send to QuPath
+	n_ROI = rm.getCount();
+	for(i=1; i<n_ROI; i++){
+		rm.select(i);
+		IJ.run("Send ROI to QuPath", "");
+	}
+
+	IJ.run("Close All", "");
+	rm.close();
 }
-
-IJ.run("Close All", "");
-rm.close();
+catch(err) {
+	IJ.run("Close All", "");
+	rm.close();
+}
