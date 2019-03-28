@@ -23,8 +23,8 @@ IJ.run(imp, "Find Maxima...", "noise=16000 output=[Segmented Particles]"); // 'e
 
 // adjust threshold in red channel to get tubule areas in separate mask
 IJ.setRawThreshold(imp, 2000, 65535, null);
-IJ.run(imp, "Smooth", "stack");
-Prefs.blackBackground = true;
+//IJ.run(imp, "Smooth", "stack");
+//Prefs.blackBackground = true;
 IJ.run(imp, "Convert to Mask", "method=Default");
 
 // calculate intersection of two above masks
@@ -53,8 +53,12 @@ IJ.run("To ROI Manager", "");
 rm = RoiManager.getInstance();
 rm.select(0);
 
-// surround in try-catch to continue if no ROIs are detected
-try {
+if(rm.getRoi(0).getLength() == 0) {
+	n_ROI = 0
+	IJ.run("Close All", "");
+	rm.close();
+
+} else if(rm.getRoi(0).getLength() > 200) {
 	rm.runCommand("Split"); // split selection of all cells
 	rm.runCommand("Delete"); // delete selection of all cells
 	rm.select(0); // select first cell from split
@@ -68,8 +72,10 @@ try {
 
 	IJ.run("Close All", "");
 	rm.close();
-}
-catch(err) {
+
+} else {
+	n_ROI = 1
+	IJ.run("Send ROI to QuPath", "");
 	IJ.run("Close All", "");
 	rm.close();
 }

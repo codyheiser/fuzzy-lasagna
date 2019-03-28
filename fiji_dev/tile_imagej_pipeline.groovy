@@ -8,27 +8,18 @@ import ij.WindowManager
 import ij.plugin.ImageCalculator
 import ij.plugin.frame.RoiManager
 import qupath.imagej.gui.IJExtension
-//import qupath.imagej.processing.SimpleThresholding
-//import qupath.imagej.helpers.IJTools
 import qupath.imagej.images.servers.ImagePlusServer
 import qupath.imagej.images.servers.ImagePlusServerBuilder
-//import qupath.imagej.plugins.ImageJMacroRunner
-//import qupath.lib.scripting.QPEx
-//import qupath.lib.plugins.parameters.ParameterList
 import qupath.lib.images.servers.ImageServer
 import qupath.lib.regions.RegionRequest
 import qupath.lib.scripting.QP
 import java.awt.image.BufferedImage
 
-int tileWidthPixels = 700  // width of (final) output tile in pixels
+// set parameters for tiling QuPath image
+int tileWidthPixels = 1000  // width of (final) output tile in pixels
 int tileHeightPixels = tileWidthPixels // Width of (final) output tile in pixels
-double downsample = 4      // downsampling used when extracting tiles
-
-int maxErrors = 20          // maximum number of errors... to avoid trying something doomed forever
-int minImageDimension = 20  // if a tile will have a width or height < minImageDimension, it will be skipped
-
-// initialize error counter
-int nErrors = 0
+double downsample = 1      // downsampling used when extracting tiles
+int minImageDimension = 50  // if a tile will have a width or height < minImageDimension, it will be skipped
 
 // get the image server
 ImageServer<BufferedImage> serverOriginal = QP.getCurrentImageData().getServer()
@@ -48,7 +39,7 @@ double tileHeight = tileHeightPixels * downsample
 // loop through the image - including z-slices (even though there's normally only one...)
 int counter = 0;
 for (int z = 0; z < server.nZSlices(); z++) { 
-    for (double y = 0; y < server.getHeight(); y += tileHeight) { // replace number with server.getHeight()
+    for (double y = 0; y < server.getHeight(); y += tileHeight) { 
 
         // compute integer y coordinates
         int yi = (int)(y + 0.5)
@@ -61,7 +52,7 @@ for (int z = 0; z < server.nZSlices(); z++) {
             continue
         }
 
-        for (double x = 0; x < server.getWidth(); x += tileWidth) { // replace number with server.getWidth()
+        for (double x = 0; x < server.getWidth(); x += tileWidth) { 
 
             // compute integer x coordinates
             int xi = (int)(x + 0.5)
@@ -78,9 +69,6 @@ for (int z = 0; z < server.nZSlices(); z++) {
                     println("Image dimension < " + minImageDimension + " - skipping column")
                 continue
             }
-
-            // surround with try/catch in case the server gives us trouble
-            //try {
             
             // read the image region
             println("Sending tile " + counter + " to ImageJ")
@@ -100,13 +88,10 @@ for (int z = 0; z < server.nZSlices(); z++) {
             
             // adjust threshold in red channel to get tubule areas in separate mask
             IJ.setRawThreshold(imp, 2000, 65535, null);
-            //IJ.run(imp, "Smooth");
-            //Prefs.blackBackground = true;
             IJ.run(imp, "Convert to Mask", "method=Default");
             
             //// calculate intersection of two above masks
             names = WindowManager.getImageTitles()
-            println(names) // see if WindowManager works
             imp1 = WindowManager.getImage(names[0]); // maxima mask
             imp2 = WindowManager.getImage(names[1]); // thresholded mask
             ic = new ImageCalculator();
@@ -129,42 +114,42 @@ for (int z = 0; z < server.nZSlices(); z++) {
             
             // in ROI Manager, split selection into individual cells
             rm = RoiManager.getInstance();
-            rm.select(0); 
+            rm.select(0);
 
-            // surround in try-catch to continue if no ROIs are detected
-            try {
+            println(rm.getRoi(0).getLength())
+
+            if(rm.getRoi(0).getLength() == 0) {
+                n_ROI = 0
+            	IJ.run("Close All", "");
+            	rm.close();
+
+            } else if(rm.getRoi(0).getLength() > 200) {
             	rm.runCommand("Split"); // split selection of all cells
             	rm.runCommand("Delete"); // delete selection of all cells
             	rm.select(0); // select first cell from split
-
+            
             	// loop through cell ROIs and send to QuPath
             	n_ROI = rm.getCount();
             	for(i=1; i<n_ROI; i++){
             		rm.select(i);
             		IJ.run("Send ROI to QuPath", "");
             	}
+            
+            	IJ.run("Close All", "");
+            	rm.close();
 
-            	IJ.run("Close All", "");
-            	rm.close();
-            }
-            catch(err) {
-            	IJ.run("Close All", "");
-            	rm.close();
+            } else {
+                n_ROI = 1
+                IJ.run("Send ROI to QuPath", "");
+                IJ.run("Close All", "");
+                rm.close();
             }
             
             // print progress
             counter++
             println("Identified " + n_ROI + " ROIs in tile " + counter)
-
-            //} catch (Exception e) {
-            //    // check if we have had a sufficient number of errors to just give up
-            //    nErrors++;
-            //    if (nErrors > maxErrors) {
-            //        println("Maximum number of errors exceeded - aborting...")
-            //        return
-            //    }
-            //    e.printStackTrace()
-            //}
         }
     }
 }
+
+println("Done!");
