@@ -1,4 +1,6 @@
 // tile whole-slide image in QuPath and send to ImageJ for analysis
+// return resulting ROIs to QuPath as individual annotations
+//
 // @author: C Heiser
 // Mar19
 
@@ -15,21 +17,25 @@ import qupath.lib.regions.RegionRequest
 import qupath.lib.scripting.QP
 import java.awt.image.BufferedImage
 
-// set parameters for tiling QuPath image
-int tileWidthPixels = 1000  // width of (final) output tile in pixels
-int tileHeightPixels = tileWidthPixels // Width of (final) output tile in pixels
-double downsample = 1      // downsampling used when extracting tiles
-int minImageDimension = 50  // if a tile will have a width or height < minImageDimension, it will be skipped
+// set parameters for tiling QuPath image and IJ analysis
+int tileWidthPixels = 1000              // width of (final) output tile in pixels
+int tileHeightPixels = tileWidthPixels  // Width of (final) output tile in pixels
+double downsample = 2                   // downsampling used when extracting tiles
+int minImageDimension = 50              // if a tile will have a width or height < minImageDimension, it will be skipped
+
+// set parameters for IJ target detection
+String GaussianBlurSigma = "2"			// sigma value for preliminary Gaussian blur filter
+String maximaNoiseTolerance = "16000"	// noise tolerance for identifying red channel maxima
+int minThreshold = 2000					// lower threshold for raw red channel
+String minParticleSize = "500"          // minimum size particle to keep in IJ analysis (pixels^2)
+int minROIlen = 300                     // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
 
 // get the image server
 ImageServer<BufferedImage> serverOriginal = QP.getCurrentImageData().getServer()
-
 // get an ImagePlus server
 ImagePlusServer server = ImagePlusServerBuilder.ensureImagePlusWholeSlideServer(serverOriginal)
-
 // make sure that ImageJ is open
 IJExtension.getImageJInstance()
-
 // extract useful variables
 String path = server.getPath()
 String serverName = serverOriginal.getShortServerName()
@@ -39,7 +45,7 @@ double tileHeight = tileHeightPixels * downsample
 // loop through the image - including z-slices (even though there's normally only one...)
 int counter = 0;
 for (int z = 0; z < server.nZSlices(); z++) { 
-    for (double y = 0; y < server.getHeight(); y += tileHeight) { 
+    for (double y = 0; y < server.getHeight(); y += 0.8*tileHeight) { 
 
         // compute integer y coordinates
         int yi = (int)(y + 0.5)
@@ -52,14 +58,14 @@ for (int z = 0; z < server.nZSlices(); z++) {
             continue
         }
 
-        for (double x = 0; x < server.getWidth(); x += tileWidth) { 
+        for (double x = 0; x < server.getWidth(); x += 0.8*tileWidth) { 
 
             // compute integer x coordinates
             int xi = (int)(x + 0.5)
             int x2i = (int)Math.min((int)(x + tileWidth + 0.5), server.getWidth());
             int wi = x2i - xi
 
-            // create request
+            // create request with proper coordinates and downsample factor
             RegionRequest request = RegionRequest.createInstance(path, downsample, xi, yi, wi, hi, z, 0)
 
             // check if we requesting a region that is too small
@@ -81,25 +87,25 @@ for (int z = 0; z < server.nZSlices(); z++) {
             IJ.run(imp, "Delete Slice", "");
             IJ.run(imp, "Delete Slice", "");
             // perform gaussian blur filter to lower background
-            IJ.run(imp, "Gaussian Blur...", "sigma=2");
+            IJ.run(imp, "Gaussian Blur...", "sigma=" + GaussianBlurSigma);
             
             // segment by maxima in red channel and create mask
-            IJ.run(imp, "Find Maxima...", "noise=16000 output=[Segmented Particles]"); // 'exclude' at end of string to exclude on edges
+            IJ.run(imp, "Find Maxima...", "noise=" + maximaNoiseTolerance + " output=[Segmented Particles]");
             
             // adjust threshold in red channel to get tubule areas in separate mask
-            IJ.setRawThreshold(imp, 2000, 65535, null);
+            IJ.setRawThreshold(imp, minThreshold, 65535, null);
             IJ.run(imp, "Convert to Mask", "method=Default");
             
-            //// calculate intersection of two above masks
+            // calculate intersection of two above masks
             names = WindowManager.getImageTitles()
             imp1 = WindowManager.getImage(names[0]); // maxima mask
             imp2 = WindowManager.getImage(names[1]); // thresholded mask
             ic = new ImageCalculator();
-            imp3 = ic.run("AND create", imp1, imp2); // intersection of maxima and threshold
+            imp3 = ic.run("AND create exclude", imp1, imp2); // intersection of maxima and threshold
             imp3.show();
             
-            // clean up by tubules by size, invert selection and fill holes
-            imp4 = IJ.run(imp3, "Analyze Particles...", "size=500-Infinity show=Masks");
+            // clean up by tubules by size, invert selection and fill holes to yield final binary mask
+            imp4 = IJ.run(imp3, "Analyze Particles...", "size=" + minParticleSize + "-Infinity show=Masks exclude");
             imp2.close();
             imp3.close();
             names = WindowManager.getImageTitles()
@@ -107,23 +113,22 @@ for (int z = 0; z < server.nZSlices(); z++) {
             IJ.run(imp4, "Invert LUT", "");
             IJ.run(imp4, "Fill Holes", "");
             
-            // select mask and send to ROI manager
+            // select entire mask and send to ROI manager
             IJ.run(imp4, "Create Selection", "");
             IJ.run(imp4, "Add Selection...", "");
             IJ.run("To ROI Manager", "");
-            
-            // in ROI Manager, split selection into individual cells
-            rm = RoiManager.getInstance();
-            rm.select(0);
+            rm = RoiManager.getInstance(); // open ROI manager window
+            rm.select(0); // get selection of entire mask
 
+            // see if selection is splittable into multiple cells
             println(rm.getRoi(0).getLength())
 
-            if(rm.getRoi(0).getLength() == 0) {
+            if(rm.getRoi(0).getLength() == 0) { // no ROIs detected; return to QuPath
                 n_ROI = 0
             	IJ.run("Close All", "");
             	rm.close();
 
-            } else if(rm.getRoi(0).getLength() > 200) {
+            } else if(rm.getRoi(0).getLength() > minROIlen) { // multiple ROIs detected; split, iterate, and send to QuPath
             	rm.runCommand("Split"); // split selection of all cells
             	rm.runCommand("Delete"); // delete selection of all cells
             	rm.select(0); // select first cell from split
@@ -138,7 +143,7 @@ for (int z = 0; z < server.nZSlices(); z++) {
             	IJ.run("Close All", "");
             	rm.close();
 
-            } else {
+            } else { // one ROI detected (rm.getRoi(0).getLength() <= minROIlen); send it to QuPath
                 n_ROI = 1
                 IJ.run("Send ROI to QuPath", "");
                 IJ.run("Close All", "");
@@ -146,8 +151,8 @@ for (int z = 0; z < server.nZSlices(); z++) {
             }
             
             // print progress
-            counter++
             println("Identified " + n_ROI + " ROIs in tile " + counter)
+            counter++
         }
     }
 }

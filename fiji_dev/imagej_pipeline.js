@@ -1,4 +1,6 @@
-// process region from QuPath for red-channel tubules, select resulting ROIs and send back to QuPath
+// process RGB image partition from QuPath for red-channel tubules
+// identify independent ROIs and send back to QuPath
+//
 // @author: C Heiser
 // Mar19
 
@@ -7,24 +9,28 @@ importClass(Packages.ij.WindowManager);
 importClass(Packages.ij.plugin.ImageCalculator);
 importClass(Packages.ij.gui.GenericDialog);
 
-imp = IJ.getImage();
+// set parameters for IJ target detection
+var GaussianBlurSigma = "2";			// sigma value for preliminary Gaussian blur filter
+var maximaNoiseTolerance = "16000";		// noise tolerance for identifying red channel maxima
+var minThreshold = 2000;				// lower threshold for raw red channel
+var minParticleSize = "500";         	// minimum size particle to keep (pixels^2)
+var minROIlen = 300;                    // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
 
-// remove blue and green channels to segment only on red
+// get stacks image and remove blue and green channels to segment only on red
+imp = IJ.getImage();
 IJ.run(imp, "Next Slice [>]", "");
 IJ.run(imp, "Next Slice [>]", "");
 IJ.run(imp, "Delete Slice", "");
 IJ.run(imp, "Delete Slice", "");
 
 // perform gaussian blur filter to lower background
-IJ.run(imp, "Gaussian Blur...", "sigma=2");
+IJ.run(imp, "Gaussian Blur...", "sigma=" + GaussianBlurSigma);
 
 // segment by maxima in red channel and create mask
-IJ.run(imp, "Find Maxima...", "noise=16000 output=[Segmented Particles]"); // 'exclude' at end of string to exclude on edges
+IJ.run(imp, "Find Maxima...", "noise=" + maximaNoiseTolerance + " output=[Segmented Particles]");
 
 // adjust threshold in red channel to get tubule areas in separate mask
-IJ.setRawThreshold(imp, 2000, 65535, null);
-//IJ.run(imp, "Smooth", "stack");
-//Prefs.blackBackground = true;
+IJ.setRawThreshold(imp, minThreshold, 65535, null);
 IJ.run(imp, "Convert to Mask", "method=Default");
 
 // calculate intersection of two above masks
@@ -32,11 +38,11 @@ names = WindowManager.getImageTitles()
 imp1 = WindowManager.getImage(names[0]); // maxima mask
 imp2 = WindowManager.getImage(names[1]); // thresholded mask
 ic = new ImageCalculator();
-imp3 = ic.run("AND create", imp1, imp2); // intersection of maxima and threshold
+imp3 = ic.run("AND create exclude", imp1, imp2); // intersection of maxima and threshold
 imp3.show();
 
 // clean up by tubules by size, invert selection and fill holes
-imp4 = IJ.run(imp3, "Analyze Particles...", "size=500-Infinity show=Masks");
+imp4 = IJ.run(imp3, "Analyze Particles...", "size=" + minParticleSize + "-Infinity show=Masks exclude");
 imp2.close();
 imp3.close();
 names = WindowManager.getImageTitles()
@@ -53,12 +59,12 @@ IJ.run("To ROI Manager", "");
 rm = RoiManager.getInstance();
 rm.select(0);
 
-if(rm.getRoi(0).getLength() == 0) {
+if(rm.getRoi(0).getLength() == 0) { // no ROIs detected; return to QuPath
 	n_ROI = 0
 	IJ.run("Close All", "");
 	rm.close();
 
-} else if(rm.getRoi(0).getLength() > 200) {
+} else if(rm.getRoi(0).getLength() > minROIlen) { // multiple ROIs detected; split, iterate, and send to QuPath
 	rm.runCommand("Split"); // split selection of all cells
 	rm.runCommand("Delete"); // delete selection of all cells
 	rm.select(0); // select first cell from split
@@ -73,7 +79,7 @@ if(rm.getRoi(0).getLength() == 0) {
 	IJ.run("Close All", "");
 	rm.close();
 
-} else {
+} else { // one ROI detected (rm.getRoi(0).getLength() <= minROIlen); send it to QuPath
 	n_ROI = 1
 	IJ.run("Send ROI to QuPath", "");
 	IJ.run("Close All", "");
