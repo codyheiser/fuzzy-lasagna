@@ -9,15 +9,23 @@ importClass(Packages.ij.WindowManager);
 importClass(Packages.ij.plugin.ImageCalculator);
 importClass(Packages.ij.gui.GenericDialog);
 
+imp = IJ.getImage();
+bits = imp.getBitDepth();						// number of bits in image
+maxIntensity = Math.pow(2, (bits/3));			// maximum intensity in each channel (24-bit image is 8-bit per channel)
+
 // set parameters for IJ target detection
-var GaussianBlurSigma = "2";			// sigma value for preliminary Gaussian blur filter
-var maximaNoiseTolerance = "16000";		// noise tolerance for identifying red channel maxima
-var minThreshold = 2000;				// lower threshold for raw red channel
-var minParticleSize = "500";         	// minimum size particle to keep (pixels^2)
-var minROIlen = 300;                    // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
+var GaussianBlurSigma = "2";					// sigma value for preliminary Gaussian blur filter
+var maximaNoiseTolerance = 0.244*maxIntensity;	// noise tolerance fraction for identifying red channel maxima
+var minThreshold = 0.0305*maxIntensity;			// lower threshold fraction for raw red channel
+var minParticleSize = "500";         			// minimum size particle to keep (pixels^2)
+var minROIlen = 300;                    		// ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
+
+if(bits == 24){
+    // split 24-bit RGB image into stack by channels
+    IJ.run(imp, "RGB Stack", "")
+}
 
 // get stacks image and remove blue and green channels to segment only on red
-imp = IJ.getImage();
 IJ.run(imp, "Next Slice [>]", "");
 IJ.run(imp, "Next Slice [>]", "");
 IJ.run(imp, "Delete Slice", "");
@@ -30,7 +38,7 @@ IJ.run(imp, "Gaussian Blur...", "sigma=" + GaussianBlurSigma);
 IJ.run(imp, "Find Maxima...", "noise=" + maximaNoiseTolerance + " output=[Segmented Particles]");
 
 // adjust threshold in red channel to get tubule areas in separate mask
-IJ.setRawThreshold(imp, minThreshold, 65535, null);
+IJ.setRawThreshold(imp, minThreshold, maxIntensity, null);
 IJ.run(imp, "Convert to Mask", "method=Default");
 
 // calculate intersection of two above masks
