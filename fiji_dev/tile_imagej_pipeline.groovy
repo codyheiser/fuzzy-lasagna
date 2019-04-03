@@ -2,7 +2,7 @@
 // return resulting ROIs to QuPath as individual annotations
 //
 // @author: C Heiser
-// Mar19
+// Apr19
 
 import ij.IJ
 import ij.ImagePlus
@@ -18,17 +18,10 @@ import qupath.lib.scripting.QP
 import java.awt.image.BufferedImage
 
 // set parameters for tiling QuPath image and IJ analysis
-int tileWidthPixels = 1000              // width of (final) output tile in pixels
-int tileHeightPixels = tileWidthPixels  // Width of (final) output tile in pixels
-double downsample = 2                   // downsampling used when extracting tiles
-int minImageDimension = 50              // if a tile will have a width or height < minImageDimension, it will be skipped
-
-// set parameters for IJ target detection
-String GaussianBlurSigma = "2"			// sigma value for preliminary Gaussian blur filter
-String maximaNoiseTolerance = "16000"	// noise tolerance for identifying red channel maxima
-int minThreshold = 2000					// lower threshold for raw red channel
-String minParticleSize = "500"          // minimum size particle to keep in IJ analysis (pixels^2)
-int minROIlen = 300                     // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
+int tileWidthPixels = 1000                          // width of (final) output tile in pixels
+int tileHeightPixels = tileWidthPixels              // Width of (final) output tile in pixels
+double downsample = 2                               // downsampling used when extracting tiles
+int minImageDimension = 50                          // if a tile will have a width or height < minImageDimension, it will be skipped
 
 // get the image server
 ImageServer<BufferedImage> serverOriginal = QP.getCurrentImageData().getServer()
@@ -41,6 +34,15 @@ String path = server.getPath()
 String serverName = serverOriginal.getShortServerName()
 double tileWidth = tileWidthPixels * downsample
 double tileHeight = tileHeightPixels * downsample
+int bits = serverOriginal.getBitsPerPixel()         // number of bits in image
+double maxIntensity = Math.pow(2, bits)           // maximum intensity in each channel (24-bit image is 8-bit per channel)
+
+// set parameters for IJ target detection
+String GaussianBlurSigma = "2"			            // sigma value for preliminary Gaussian blur filter
+String maximaNoiseTolerance = 0.244*maxIntensity;	// noise tolerance for identifying red channel maxima
+int minThreshold = 0.0305*maxIntensity;				// lower threshold for raw red channel
+String minParticleSize = "500"                      // minimum size particle to keep in IJ analysis (pixels^2)
+int minROIlen = 300                                 // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
 
 // loop through the image - including z-slices (even though there's normally only one...)
 int counter = 0;
@@ -81,6 +83,10 @@ for (int z = 0; z < server.nZSlices(); z++) {
             ImagePlus imp = server.readImagePlusRegion(request).getImage(false)
             // show the image
             imp.show()
+            if(bits == 8){
+                // split 24-bit RGB image into stack by channels
+                IJ.run(imp, "RGB Stack", "")
+            }
             // remove blue and green channels to segment only on red
             IJ.run(imp, "Next Slice [>]", "");
             IJ.run(imp, "Next Slice [>]", "");
@@ -93,7 +99,7 @@ for (int z = 0; z < server.nZSlices(); z++) {
             IJ.run(imp, "Find Maxima...", "noise=" + maximaNoiseTolerance + " output=[Segmented Particles]");
             
             // adjust threshold in red channel to get tubule areas in separate mask
-            IJ.setRawThreshold(imp, minThreshold, 65535, null);
+            IJ.setRawThreshold(imp, minThreshold, maxIntensity, null);
             IJ.run(imp, "Convert to Mask", "method=Default");
             
             // calculate intersection of two above masks

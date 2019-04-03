@@ -1,7 +1,7 @@
 // tile whole-slide image in QuPath and create annotations for each tile
 //
 // @author: C Heiser
-// Mar19
+// Apr19
 
 import qupath.imagej.images.servers.ImagePlusServer
 import qupath.imagej.images.servers.ImagePlusServerBuilder
@@ -22,14 +22,6 @@ int minImageDimension = 50              // if a tile will have a width or height
 // Get main data structures
 def imageData = QPEx.getCurrentImageData()
 def server = imageData.getServer()
-
-// get the image server
-//ImageServer<BufferedImage> serverOriginal = QP.getCurrentImageData().getServer()
-// get an ImagePlus server
-//ImagePlusServer server = ImagePlusServerBuilder.ensureImagePlusWholeSlideServer(serverOriginal)
-// extract useful variables
-//String path = server.getPath()
-//String serverName = serverOriginal.getShortServerName()
 double tileWidth = tileWidthPixels * downsample
 double tileHeight = tileHeightPixels * downsample
 

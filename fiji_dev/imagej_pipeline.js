@@ -2,7 +2,7 @@
 // identify independent ROIs and send back to QuPath
 //
 // @author: C Heiser
-// Mar19
+// Apr19
 
 importClass(Packages.ij.IJ); 
 importClass(Packages.ij.WindowManager);
