@@ -1,8 +1,9 @@
-# fuzzy-lasagna IMS analysis objects
+'''
+fuzzy-lasagna analysis objects
 
-# @author: C Heiser
-# March 2019
-
+@author: C Heiser
+Apr2019
+'''
 # packages for reading in data files
 import os
 # basics
@@ -77,18 +78,18 @@ def to_coord_3D(mat):
 	return pd.DataFrame(coord)
 
 
-class ilastik_mask():
+class img_mask():
 	'''
-	Object containing segmentation masks exported from ilastik ML software
+	Object containing image segmentation masks
 	'''
 	def __init__(self, data):
-		'''data = np.ndarray containing segment IDs from ilastik'''
+		'''data = np.ndarray containing segment IDs'''
 		self.raw = data
 
 	def get_points(self, seg_ID=1):
 		'''get x, y coordinates and value ('intensity') for each item in data array; return as pd.DataFrame'''
 		if isinstance(self, seg):
-			dat = self.data 
+			dat = self.data
 
 		elif isinstance(self, prob):
 			dat = self.data[seg_ID]
@@ -131,13 +132,13 @@ class ilastik_mask():
 		return cls(data)
 
 
-class seg(ilastik_mask):
+class seg(img_mask):
 	'''
-	Object containing 'Simple Segmentation' export from ilastik.
-	Values should be integers on [1, len(segments)] where number of segments are defined in ilastik (usually 2-3).
+	Object containing 'Simple Segmentation' mask export.
+	Values should be integers on [1, len(segments)] where number of segments are usually 2-3.
 	'''
 	def __init__(self, data):
-		ilastik_mask.__init__(self, data) # inherits from ilastik_mask object
+		img_mask.__init__(self, data) # inherits from img_mask object
 		self.data = np.squeeze(self.raw) # squeeze into 2D
 		self.dims = self.data.shape # dimensions of image in pixels
 		self.seg_IDs = np.unique(self.data) # segment IDs present in file
@@ -150,13 +151,13 @@ class seg(ilastik_mask):
 		plt.close()
 
 
-class prob(ilastik_mask):
+class prob(img_mask):
 	'''
-	Object containing 'Probabilities' export from ilastik.
-	Values should be on [0, 1] that describe fractional probability of belonging to segment groups defined in ilastik.
+	Object containing 'Probabilities' mask export.
+	Values should be on [0, 1] that describe fractional probability of belonging to segment groups.
 	'''
 	def __init__(self, data):
-		ilastik_mask.__init__(self, data) # inherits from ilastik_mask object
+		img_mask.__init__(self, data) # inherits from img_mask object
 		self.dims = self.raw.shape # get all three dimensions of object (ID, pixel, pixel)
 		self.data = {} # data dumped into dictionary on third dimension, which is different segment IDs
 		for dim in range(1,self.dims[0]+1):
@@ -190,13 +191,13 @@ class prob(ilastik_mask):
 
 
 class mask_stack():
-	'''stack of ilastik_mask objects for 3D mapping and visualization'''
+	'''stack of img_mask objects for 3D mapping and visualization'''
 	def __init__(self, masks):
 		self.data = {} # data dumped into dictionary where keys are layers in stack
 		self.dims = {}
-		self.seg_IDs = {} 
+		self.seg_IDs = {}
 		for layer in range(0,len(masks)):
-			self.data[layer] = masks[layer].data 
+			self.data[layer] = masks[layer].data
 			self.dims[layer] = masks[layer].dims
 			self.seg_IDs[layer] = masks[layer].seg_IDs
 
