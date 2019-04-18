@@ -16,12 +16,25 @@ import qupath.lib.images.servers.ImageServer
 import qupath.lib.regions.RegionRequest
 import qupath.lib.scripting.QP
 import java.awt.image.BufferedImage
+import qupath.lib.objects.PathObject
+import qupath.lib.roi.PathROIToolsAwt
+import qupath.lib.scripting.QPEx
+import javax.imageio.ImageIO
+import java.awt.Color
+
+//def pathOutput = QPEx.buildFilePath(QPEx.PROJECT_BASE_DIR, 'masks')
+//QPEx.mkdirs(pathOutput)
+String pathOutput = getQuPath().getDialogHelper().promptForDirectory(null) // prompt user for output directory
+
+// Define image export type; valid values are JPG, PNG or null (if no image region should be exported with the mask)
+// Note: masks will always be exported as PNG
+def imageExportType = 'PNG'
 
 // set parameters for tiling QuPath image and IJ analysis
-int tileWidthPixels = 1000                          // width of (final) output tile in pixels
-int tileHeightPixels = tileWidthPixels              // Width of (final) output tile in pixels
-double downsample = 2                               // downsampling used when extracting tiles
-int minImageDimension = 50                          // if a tile will have a width or height < minImageDimension, it will be skipped
+int tileWidthPixels = 1000              // width of (final) output tile in pixels
+int tileHeightPixels = tileWidthPixels  // Width of (final) output tile in pixels
+double downsample = 2                   // downsampling used when extracting tiles
+int minImageDimension = 50              // if a tile will have a width or height < minImageDimension, it will be skipped
 
 // get the image server
 ImageServer<BufferedImage> serverOriginal = QP.getCurrentImageData().getServer()
@@ -35,14 +48,13 @@ String serverName = serverOriginal.getShortServerName()
 double tileWidth = tileWidthPixels * downsample
 double tileHeight = tileHeightPixels * downsample
 int bits = serverOriginal.getBitsPerPixel()         // number of bits in image
-double maxIntensity = Math.pow(2, bits)           // maximum intensity in each channel (24-bit image is 8-bit per channel)
+double maxIntensity = Math.pow(2, bits)             // maximum intensity in each channel (24-bit image is 8-bit per channel)
 
 // set parameters for IJ target detection
 String GaussianBlurSigma = "2"			            // sigma value for preliminary Gaussian blur filter
-String maximaNoiseTolerance = 0.244*maxIntensity;	// noise tolerance for identifying red channel maxima
-int minThreshold = 0.0305*maxIntensity;				// lower threshold for raw red channel
+String maximaNoiseTolerance = 0.183*maxIntensity;	// noise tolerance for identifying red channel maxima
+int minThreshold = 0.05*maxIntensity;				// lower threshold for raw red channel
 String minParticleSize = "500"                      // minimum size particle to keep in IJ analysis (pixels^2)
-int minROIlen = 300                                 // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
 
 // loop through the image - including z-slices (even though there's normally only one...)
 int counter = 0;
@@ -87,11 +99,11 @@ for (int z = 0; z < server.nZSlices(); z++) {
                 // split 24-bit RGB image into stack by channels
                 IJ.run(imp, "RGB Stack", "")
             }
-            // remove blue and green channels to segment only on red
-            IJ.run(imp, "Next Slice [>]", "");
+            // remove blue and red channels to segment only on green
+            IJ.run(imp, "Delete Slice", "");
             IJ.run(imp, "Next Slice [>]", "");
             IJ.run(imp, "Delete Slice", "");
-            IJ.run(imp, "Delete Slice", "");
+
             // perform gaussian blur filter to lower background
             IJ.run(imp, "Gaussian Blur...", "sigma=" + GaussianBlurSigma);
             
@@ -134,21 +146,6 @@ for (int z = 0; z < server.nZSlices(); z++) {
             	IJ.run("Close All", "");
             	rm.close();
 
-            } else if(rm.getRoi(0).getLength() > minROIlen) { // multiple ROIs detected; split, iterate, and send to QuPath
-            	rm.runCommand("Split"); // split selection of all cells
-            	rm.runCommand("Delete"); // delete selection of all cells
-            	rm.select(0); // select first cell from split
-            
-            	// loop through cell ROIs and send to QuPath
-            	n_ROI = rm.getCount();
-            	for(i=1; i<n_ROI; i++){
-            		rm.select(i);
-            		IJ.run("Send ROI to QuPath", "");
-            	}
-            
-            	IJ.run("Close All", "");
-            	rm.close();
-
             } else { // one ROI detected (rm.getRoi(0).getLength() <= minROIlen); send it to QuPath
                 n_ROI = 1
                 IJ.run("Send ROI to QuPath", "");
@@ -163,4 +160,79 @@ for (int z = 0; z < server.nZSlices(); z++) {
     }
 }
 
-println("Done!");
+// Request all objects from the hierarchy & filter only the annotations
+def annotations = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
+
+// Select all annotations and merge into one big annotation
+selectObjects {
+    return it.isAnnotation()
+}
+print 'Selected all annotations'
+mergeSelectedAnnotations()
+print 'Merged annotations'
+
+// Request all objects from the hierarchy & filter only the annotations
+def annotations2 = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
+
+// Export each annotation
+annotations2.each {
+    saveImageAndMask(pathOutput, server, it, downsample, imageExportType)
+}
+print 'Done!'
+
+/**
+ * Save extracted image region & mask corresponding to an object ROI.
+ *
+ * @param pathOutput Directory in which to store the output
+ * @param server ImageServer for the relevant image
+ * @param pathObject The object to export
+ * @param downsample Downsample value for the export of both image region & mask
+ * @param imageExportType Type of image (original pixels, not mask!) to export ('JPG', 'PNG' or null)
+ * @return
+ */
+def saveImageAndMask(String pathOutput, ImageServer server, PathObject pathObject, double downsample, String imageExportType) {
+    // Extract ROI & classification name
+    def roi = pathObject.getROI()
+    def pathClass = pathObject.getPathClass()
+    def classificationName = pathClass == null ? 'None' : pathClass.toString()
+    if (roi == null) {
+        print 'Warning! No ROI for object ' + pathObject + ' - cannot export corresponding region & mask'
+        return
+    }
+
+    // Create a region from the ROI
+    def region = RegionRequest.createInstance(server.getPath(), downsample, roi)
+
+    // Create a name
+    String name = String.format('%s_%s_(%.2f,%d,%d,%d,%d)',
+            server.getShortServerName(),
+            classificationName,
+            region.getDownsample(),
+            region.getX(),
+            region.getY(),
+            server.getWidth(),
+            server.getHeight()
+    )
+
+    // Request the BufferedImage
+    def img = server.readBufferedImage(region)
+
+    // Create a mask using Java2D functionality
+    // (This involves applying a transform to a graphics object, so that none needs to be applied to the ROI coordinates)
+    def shape = PathROIToolsAwt.getShape(roi)
+    def imgMask = new BufferedImage(server.getWidth(), server.getHeight(), BufferedImage.TYPE_BYTE_GRAY)
+    def g2d = imgMask.createGraphics()
+    g2d.setColor(Color.WHITE)
+    g2d.scale(1.0/downsample, 1.0/downsample)
+    g2d.fill(shape)
+    g2d.dispose()
+
+    // Create filename & export
+    if (imageExportType != null) {
+        def fileImage = new File(pathOutput, name + '.' + imageExportType.toLowerCase())
+        ImageIO.write(img, imageExportType, fileImage)
+    }
+    // Export the mask
+    def fileMask = new File(pathOutput, name + '-mask.png')
+    ImageIO.write(imgMask, 'PNG', fileMask)
+}

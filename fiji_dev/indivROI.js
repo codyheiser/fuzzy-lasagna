@@ -11,12 +11,12 @@ importClass(Packages.ij.gui.GenericDialog);
 
 imp = IJ.getImage();
 bits = imp.getBitDepth();						// number of bits in image
-maxIntensity = Math.pow(2, (bits/3));			// maximum intensity in each channel (24-bit image is 8-bit per channel)
+maxIntensity = Math.pow(2, bits);				// maximum intensity in each channel (24-bit image is 8-bit per channel)
 
 // set parameters for IJ target detection
 var GaussianBlurSigma = "2";					// sigma value for preliminary Gaussian blur filter
 var maximaNoiseTolerance = 0.244*maxIntensity;	// noise tolerance fraction for identifying red channel maxima
-var minThreshold = 0.0305*maxIntensity;			// lower threshold fraction for raw red channel
+var minThreshold = 0.03*maxIntensity;			// lower threshold fraction for raw red channel
 var minParticleSize = "500";         			// minimum size particle to keep (pixels^2)
 var minROIlen = 300;                    		// ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
 
