@@ -1,4 +1,4 @@
-// create binary mask from all annotations of whole-slide image in QuPath and save as image file
+// save each annotation in QuPath as binary mask image file
 //
 // @author: C Heiser
 // Apr19
@@ -19,21 +19,9 @@ def hierarchy = imageData.getHierarchy()
 // get the image server
 ImageServer<BufferedImage> server = QP.getCurrentImageData().getServer()
 
-// Request all objects from the hierarchy & filter only the annotations
-def annotations = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
-
-// Select all annotations and merge into one big annotation
-selectObjects {
-    return it.isAnnotation()
-}
-print 'Selected all annotations'
-mergeSelectedAnnotations()
-print 'Merged annotations'
-
 // Define downsample value for export resolution & output directory, creating directory if necessary
 def downsample = 1.0
 
-//def folder = getQuPath().getDialogHelper().promptForDirectory(null) // prompt user for output directory
 //def pathOutput = QPEx.buildFilePath(QPEx.PROJECT_BASE_DIR, 'masks')
 //QPEx.mkdirs(pathOutput)
 String pathOutput = getQuPath().getDialogHelper().promptForDirectory(null) // prompt user for output directory
@@ -43,10 +31,10 @@ String pathOutput = getQuPath().getDialogHelper().promptForDirectory(null) // pr
 def imageExportType = 'PNG'
 
 // Request all objects from the hierarchy & filter only the annotations
-def annotations2 = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
+def annotations = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
 
 // Export each annotation
-annotations2.each {
+annotations.each {
     saveImageAndMask(pathOutput, server, it, downsample, imageExportType)
 }
 print 'Done!'

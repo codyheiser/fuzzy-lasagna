@@ -1,5 +1,5 @@
 // tile whole-slide image in QuPath and send to ImageJ for analysis
-// return resulting ROIs to QuPath as individual annotations
+// aggregate resulting ROIs as single, whole-slide annotation in QuPath
 //
 // @author: C Heiser
 // Apr19
@@ -160,79 +160,10 @@ for (int z = 0; z < server.nZSlices(); z++) {
     }
 }
 
-// Request all objects from the hierarchy & filter only the annotations
-def annotations = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
-
 // Select all annotations and merge into one big annotation
 selectObjects {
     return it.isAnnotation()
 }
-print 'Selected all annotations'
+print 'Selected all annotations ... Merging'
 mergeSelectedAnnotations()
-print 'Merged annotations'
-
-// Request all objects from the hierarchy & filter only the annotations
-def annotations2 = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
-
-// Export each annotation
-annotations2.each {
-    saveImageAndMask(pathOutput, server, it, downsample, imageExportType)
-}
 print 'Done!'
-
-/**
- * Save extracted image region & mask corresponding to an object ROI.
- *
- * @param pathOutput Directory in which to store the output
- * @param server ImageServer for the relevant image
- * @param pathObject The object to export
- * @param downsample Downsample value for the export of both image region & mask
- * @param imageExportType Type of image (original pixels, not mask!) to export ('JPG', 'PNG' or null)
- * @return
- */
-def saveImageAndMask(String pathOutput, ImageServer server, PathObject pathObject, double downsample, String imageExportType) {
-    // Extract ROI & classification name
-    def roi = pathObject.getROI()
-    def pathClass = pathObject.getPathClass()
-    def classificationName = pathClass == null ? 'None' : pathClass.toString()
-    if (roi == null) {
-        print 'Warning! No ROI for object ' + pathObject + ' - cannot export corresponding region & mask'
-        return
-    }
-
-    // Create a region from the ROI
-    def region = RegionRequest.createInstance(server.getPath(), downsample, roi)
-
-    // Create a name
-    String name = String.format('%s_%s_(%.2f,%d,%d,%d,%d)',
-            server.getShortServerName(),
-            classificationName,
-            region.getDownsample(),
-            region.getX(),
-            region.getY(),
-            server.getWidth(),
-            server.getHeight()
-    )
-
-    // Request the BufferedImage
-    def img = server.readBufferedImage(region)
-
-    // Create a mask using Java2D functionality
-    // (This involves applying a transform to a graphics object, so that none needs to be applied to the ROI coordinates)
-    def shape = PathROIToolsAwt.getShape(roi)
-    def imgMask = new BufferedImage(server.getWidth(), server.getHeight(), BufferedImage.TYPE_BYTE_GRAY)
-    def g2d = imgMask.createGraphics()
-    g2d.setColor(Color.WHITE)
-    g2d.scale(1.0/downsample, 1.0/downsample)
-    g2d.fill(shape)
-    g2d.dispose()
-
-    // Create filename & export
-    if (imageExportType != null) {
-        def fileImage = new File(pathOutput, name + '.' + imageExportType.toLowerCase())
-        ImageIO.write(img, imageExportType, fileImage)
-    }
-    // Export the mask
-    def fileMask = new File(pathOutput, name + '-mask.png')
-    ImageIO.write(imgMask, 'PNG', fileMask)
-}
