@@ -16,23 +16,17 @@ import java.awt.image.BufferedImage
 // Get the main QuPath data structures
 def imageData = QPEx.getCurrentImageData()
 def hierarchy = imageData.getHierarchy()
-// get the image server
-ImageServer<BufferedImage> server = QP.getCurrentImageData().getServer()
+ImageServer<BufferedImage> server = QP.getCurrentImageData().getServer() // get the image server
 
 // Define downsample value for export resolution & output directory, creating directory if necessary
 def downsample = 1.0
-
-//def pathOutput = QPEx.buildFilePath(QPEx.PROJECT_BASE_DIR, 'masks')
-//QPEx.mkdirs(pathOutput)
-String pathOutput = getQuPath().getDialogHelper().promptForDirectory(null) // prompt user for output directory
-
 // Define image export type; valid values are JPG, PNG or null (if no image region should be exported with the mask)
 // Note: masks will always be exported as PNG
 def imageExportType = 'PNG'
+String pathOutput = getQuPath().getDialogHelper().promptForDirectory(null) // prompt user for output directory
 
 // Request all objects from the hierarchy & filter only the annotations
 def annotations = hierarchy.getFlattenedObjectList(null).findAll {it.isAnnotation()}
-
 // Export each annotation
 annotations.each {
     saveImageAndMask(pathOutput, server, it, downsample, imageExportType)

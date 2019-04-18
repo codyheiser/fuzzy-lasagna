@@ -52,9 +52,9 @@ double maxIntensity = Math.pow(2, bits)             // maximum intensity in each
 
 // set parameters for IJ target detection
 String GaussianBlurSigma = "2"			            // sigma value for preliminary Gaussian blur filter
-String maximaNoiseTolerance = 0.183*maxIntensity;	// noise tolerance for identifying red channel maxima
-int minThreshold = 0.05*maxIntensity;				// lower threshold for raw red channel
-String minParticleSize = "500"                      // minimum size particle to keep in IJ analysis (pixels^2)
+String maximaNoiseTolerance = 0.006*maxIntensity;	// noise tolerance for identifying red channel maxima
+int minThreshold = 0.03*maxIntensity;				// lower threshold for raw red channel
+String minParticleSize = "7.5"                      // minimum size particle to keep in IJ analysis (pixels^2)
 
 // loop through the image - including z-slices (even though there's normally only one...)
 int counter = 0;
@@ -99,9 +99,9 @@ for (int z = 0; z < server.nZSlices(); z++) {
                 // split 24-bit RGB image into stack by channels
                 IJ.run(imp, "RGB Stack", "")
             }
-            // remove blue and red channels to segment only on green
+            // remove green and red channels to segment only on blue
             IJ.run(imp, "Delete Slice", "");
-            IJ.run(imp, "Next Slice [>]", "");
+            //IJ.run(imp, "Next Slice [>]", "");
             IJ.run(imp, "Delete Slice", "");
 
             // perform gaussian blur filter to lower background

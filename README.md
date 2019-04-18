@@ -6,7 +6,11 @@ Download [QuPath](https://qupath.github.io/) for analysis of whole-slide IHC ima
 You will also need the [Bioformats Extension](https://github.com/qupath/qupath-bioformats-extension).  
   
 * `.groovy` scripts run as QuPath macros
+    * `Automate` > `Show Script Editor` > `File` > `Open...`
+    * open script, then `Run`
 * `.js` scripts are used in the ImageJ extension of QuPath
+    * `Extensions` > `ImageJ` > `Export region to ImageJ`
+    * in ImageJ: `Plugins` > `Macros` > `Run`
 
 ---
 ```bash

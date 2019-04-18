@@ -12,7 +12,7 @@ importClass(Packages.ij.gui.GenericDialog);
 imp = IJ.getImage();
 bits = imp.getBitDepth();						// number of bits in image
 print('bit depth: ' + bits)
-maxIntensity = Math.pow(2, (bits));			// maximum intensity in each channel (24-bit image is 8-bit per channel)
+maxIntensity = Math.pow(2, (bits));			    // maximum intensity in each channel (24-bit image is 8-bit per channel)
 
 // set parameters for IJ target detection
 var GaussianBlurSigma = "2";					// sigma value for preliminary Gaussian blur filter
