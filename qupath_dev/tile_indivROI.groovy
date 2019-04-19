@@ -4,45 +4,59 @@
 // @author: C Heiser
 // Apr19
 
+import qupath.lib.images.servers.ImageServer
+import qupath.lib.regions.RegionRequest
+import qupath.lib.scripting.QP
+import java.awt.image.BufferedImage
 import ij.IJ
 import ij.ImagePlus
 import ij.WindowManager
+import ij.gui.GenericDialog
 import ij.plugin.ImageCalculator
 import ij.plugin.frame.RoiManager
 import qupath.imagej.gui.IJExtension
 import qupath.imagej.images.servers.ImagePlusServer
 import qupath.imagej.images.servers.ImagePlusServerBuilder
-import qupath.lib.images.servers.ImageServer
-import qupath.lib.regions.RegionRequest
-import qupath.lib.scripting.QP
-import java.awt.image.BufferedImage
 
 // set parameters for tiling QuPath image and IJ analysis
-int tileWidthPixels = 1000                          // width of (final) output tile in pixels
-int tileHeightPixels = tileWidthPixels              // Width of (final) output tile in pixels
-double downsample = 2                               // downsampling used when extracting tiles
-int minImageDimension = 50                          // if a tile will have a width or height < minImageDimension, it will be skipped
+int tileWidthPixels = 1000              // width of (final) output tile in pixels
+int tileHeightPixels = tileWidthPixels  // Width of (final) output tile in pixels
+double downsample = 4                   // downsampling used when extracting tiles
+int minImageDimension = 50              // if a tile will have a width or height < minImageDimension, it will be skipped
 
 // get the image server
 ImageServer<BufferedImage> serverOriginal = QP.getCurrentImageData().getServer()
 // get an ImagePlus server
 ImagePlusServer server = ImagePlusServerBuilder.ensureImagePlusWholeSlideServer(serverOriginal)
-// make sure that ImageJ is open
-IJExtension.getImageJInstance()
 // extract useful variables
 String path = server.getPath()
 String serverName = serverOriginal.getShortServerName()
 double tileWidth = tileWidthPixels * downsample
 double tileHeight = tileHeightPixels * downsample
-int bits = serverOriginal.getBitsPerPixel()         // number of bits in image
-double maxIntensity = Math.pow(2, bits)             // maximum intensity in each channel (24-bit image is 8-bit per channel)
+int bits = serverOriginal.getBitsPerPixel()                        // number of bits in image
+double maxIntensity = Math.pow(2, bits)                            // maximum intensity in each channel
+print('Maximum pixel intensity of ' + maxIntensity + ' for a ' + bits + '-bit image.')
 
-// set parameters for IJ target detection
-String GaussianBlurSigma = "2"			            // sigma value for preliminary Gaussian blur filter
-String maximaNoiseTolerance = 0.244*maxIntensity;	// noise tolerance for identifying red channel maxima
-int minThreshold = 0.03*maxIntensity;				// lower threshold for raw red channel
-String minParticleSize = "500"                      // minimum size particle to keep in IJ analysis (pixels^2)
-int minROIlen = 300                                 // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
+// make sure that ImageJ is open
+IJExtension.getImageJInstance()
+// prompt user for input parameters in IJ
+gd = new GenericDialog("Parameters");
+gd.addStringField("Channel: ", "R");
+gd.addNumericField("Gaussian Blur Sigma: ", 2, 0);
+gd.addNumericField("Max. Noise Tolerance (fraction): ", 0.244, 3);
+gd.addNumericField("Color Threshold (fraction): ", 0.03, 2);
+gd.addNumericField("Min. Particle Size (um): ", 500, 0);
+gd.addNumericField("Min. ROI Split (um): ", 300, 0);
+gd.showDialog();
+// extract values from dialog box
+String channel = gd.getNextString();
+float GaussianBlurSigma = gd.getNextNumber();                     // sigma value for preliminary Gaussian blur filter
+float maximaNoiseTolerance = gd.getNextNumber()*maxIntensity;     // noise tolerance for identifying channel maxima
+println('Noise tolerance: ' + maximaNoiseTolerance)
+float minThreshold = gd.getNextNumber()*maxIntensity;             // lower threshold for raw channel
+println('Threshold in '+ channel +' channel: ' + minThreshold)
+float minParticleSize = gd.getNextNumber();                       // minimum size particle to keep (pixels^2)
+float minROIlen = gd.getNextNumber();                             // ROI measurement cutoff to determine when to split; rule of thumb: >50% of minParticleSize
 
 // loop through the image - including z-slices (even though there's normally only one...)
 int counter = 0;
@@ -83,15 +97,26 @@ for (int z = 0; z < server.nZSlices(); z++) {
             ImagePlus imp = server.readImagePlusRegion(request).getImage(false)
             // show the image
             imp.show()
-            if(bits == 8){
+            if(bits == 24){
                 // split 24-bit RGB image into stack by channels
                 IJ.run(imp, "RGB Stack", "")
             }
-            // remove blue and green channels to segment only on red
-            IJ.run(imp, "Next Slice [>]", "");
-            IJ.run(imp, "Next Slice [>]", "");
-            IJ.run(imp, "Delete Slice", "");
-            IJ.run(imp, "Delete Slice", "");
+
+            // based on channel choice, remove other two channels from stack
+            if(channel == "R"){
+                IJ.run(imp, "Next Slice [>]", "");
+                IJ.run(imp, "Next Slice [>]", "");
+                IJ.run(imp, "Delete Slice", "");
+                IJ.run(imp, "Delete Slice", "");
+            }else if(channel == "G"){
+                IJ.run(imp, "Delete Slice", "");
+                IJ.run(imp, "Next Slice [>]", "");
+                IJ.run(imp, "Delete Slice", "");
+            }else if(channel == "B"){
+                IJ.run(imp, "Delete Slice", "");
+                IJ.run(imp, "Delete Slice", "");
+            }
+
             // perform gaussian blur filter to lower background
             IJ.run(imp, "Gaussian Blur...", "sigma=" + GaussianBlurSigma);
             
