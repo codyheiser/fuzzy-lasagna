@@ -1,0 +1,28 @@
+Package: Cardinal
+Type: Package
+Title: A mass spectrometry imaging toolbox for statistical analysis
+Version: 2.0.4
+Date: 2015-1-12
+Author: Kylie A. Bemis <k.bemis@northeastern.edu>
+Maintainer: Kylie A. Bemis <k.bemis@northeastern.edu>
+Description: Implements statistical & computational tools for analyzing
+	mass spectrometry imaging datasets, including methods for efficient
+	pre-processing, spatial segmentation, and classification.
+License: Artistic-2.0
+Depends: BiocGenerics, BiocParallel, EBImage, graphics, methods,
+        S4Vectors, stats, ProtGenerics
+Imports: Biobase, dplyr, grid, irlba, lattice, magrittr, matter,
+        signal, sp, stats4, utils
+Suggests: BiocStyle, testthat
+biocViews: Software, Infrastructure, Proteomics, Lipidomics,
+        MassSpectrometry, ImagingMassSpectrometry, ImmunoOncology,
+        Normalization, Clustering, Classification
+URL: http://www.cardinalmsi.org
+git_url: https://git.bioconductor.org/packages/Cardinal
+git_branch: RELEASE_3_8
+git_last_commit: 215a754
+git_last_commit_date: 2019-02-21
+Date/Publication: 2019-02-21
+NeedsCompilation: yes
+Packaged: 2019-02-22 01:16:55 UTC; biocbuild
+Built: R 3.5.2; x86_64-apple-darwin15.6.0; 2019-02-22 08:53:12 UTC; unix

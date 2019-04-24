@@ -1,0 +1,202 @@
+
+import("methods")
+
+import("biglm")
+
+importFrom("digest",
+	"digest")
+
+importFrom("irlba",
+	"irlba")
+
+importFrom("stats",
+	"update",
+	"setNames",
+	"na.omit")
+
+importFrom("BiocGenerics",
+	"as.data.frame",
+	"as.list",
+	"as.vector",
+	"mean",
+	"sd",
+	"var",
+	"colMeans",
+	"colSums",
+	"rowMeans",
+	"rowSums",
+	"t",
+	"combine",
+	"cbind",
+	"rbind",
+	"lengths",
+	"which")
+
+importFrom("utils",
+	"head",
+	"tail",
+	"object.size")
+
+exportClasses(
+	"drle",
+	"matter",
+	"matter_vec",
+	"matter_mat",
+	"matter_matc",
+	"matter_matr",
+	"matter_arr",
+	"matter_list",
+	"matter_str",
+	"matter_fc",
+	"matter_df",
+	"rep_vt",
+	"sparse_mat",
+	"sparse_matc",
+	"sparse_matr",
+	"virtual_mat",
+	"virtual_matc",
+	"virtual_matr")
+
+export(
+	"drle",
+	"is.drle")
+
+export(
+	"matter",
+	"matter_vec",
+	"matter_mat",
+	"matter_arr",
+	"matter_list",
+	"matter_str",
+	"matter_fc",
+	"matter_df",
+	"rep_vt",
+	"sparse_mat",
+	"virtual_mat",
+	"is.matter",
+	"as.matter",
+	"is.sparse",
+	"as.sparse",
+	"is.virtual",
+	"as.virtual",
+	"struct")
+
+exportMethods(
+	"as.vector",
+	"as.matrix",
+	"as.array",
+	"as.list",
+	"as.data.frame")
+
+exportMethods(
+	"adata",
+	"atomdata",
+	"atomdata<-",
+	"datamode",
+	"datamode<-",
+	"paths",
+	"paths<-",
+	"filemode",
+	"filemode<-",
+	"readonly",
+	"readonly<-",
+	"chunksize",
+	"chunksize<-")
+
+exportMethods("checksum")
+
+exportMethods(
+	"keys",
+	"keys<-",
+	"tolerance",
+	"tolerance<-",
+	"combiner",
+	"combiner<-")
+
+exportMethods(
+	"%*%",
+	"[",
+	"[<-",
+	"$",
+	"$<-",
+	"c",
+	"cbind",
+	"rbind",
+	"lengths",
+	"length",
+	"length<-",
+	"dim",
+	"dim<-",
+	"names",
+	"names<-",
+	"dimnames",
+	"dimnames<-",
+	"levels",
+	"levels<-",
+	"t",
+	"crossprod",
+	"tcrossprod")
+
+exportMethods(
+	"Arith",
+	"Compare",
+	"exp",
+	"log",
+	"log2",
+	"log10")
+
+exportMethods(
+	"head",
+	"tail",
+	"range",
+	"min",
+	"max",
+	"prod",
+	"sum",
+	"mean",
+	"var",
+	"sd",
+	"any",
+	"all",
+	"colSums",
+	"colMeans",
+	"colVars",
+	"colSds",
+	"rowSums",
+	"rowMeans",
+	"rowVars",
+	"rowSds",
+	"which")
+
+export(
+	"uuid",
+	"hex2raw",
+	"raw2hex")
+
+S3method("print", "bytes")
+S3method("format", "bytes")
+
+export(
+	"sizeof",
+	"make_datamode",
+	"convert_datamode",
+	"widest_datamode",
+	"vm_used")
+
+exportMethods("apply")
+
+exportMethods("scale")
+
+exportMethods(
+	"biglm",
+	"bigglm")
+
+exportMethods("prcomp")
+
+export("bsearch")
+
+export(
+	"mem",
+	"profmem")
+
+useDynLib("matter", .registration=TRUE)

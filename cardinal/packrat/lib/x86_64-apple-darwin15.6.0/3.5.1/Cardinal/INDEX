@@ -1,0 +1,93 @@
+Binmat-class            Binmat: On-disk matrix class using on-demand
+                        disk access
+Cardinal-deprecated     Deprecated functions and methods in Cardinal
+Cardinal-package        Mass spectrometry imaging tools
+Cardinal-reexports      Objects exported from other packages
+Hashmat-class           Hashmat: Sparse matrix class using lists as
+                        hash tables
+IAnnotatedDataFrame-class
+                        IAnnotatedDataFrame: Class containing measured
+                        variables and their metadata for imaging
+                        experiments
+ImageData-class         ImageData: Class containing arrays of imaging
+                        data
+ImageList-class         ImageList: Abstract image data list
+ImagingExperiment-class
+                        ImagingExperiment: Abstract class for imaging
+                        experiments
+MIAPE-Imaging-class     MIAPE-Imaging: Class for storing mass
+                        spectrometry imaging experiment information
+MSContinuousImagingExperiment-class
+                        MSContinuousImagingExperiment: Dense mass
+                        spectrometry imaging experiments
+MSImageData-class       MSImageData: Class containing mass spectrometry
+                        image data
+MSImageProcess-class    MSImageProcess: Class containing mass spectral
+                        preprocessing information
+MSImageSet-class        MSImageSet: Class to contain mass spectrometry
+                        imaging experiment data
+MSImagingExperiment-class
+                        MSImagingExperiment: Mass spectrometry imaging
+                        experiments
+MSImagingInfo-class     MSImagingInfo: Mass spectrometry imaging
+                        metadata for imzML conversion
+MSProcessedImagingExperiment-class
+                        MSProcessedImagingExperiment: Dense mass
+                        spectrometry imaging experiments
+MassDataFrame-class     MassDataFrame: data frame with mass-to-charge
+                        ratio metadata
+OPLS-methods            Orthogonal partial least squares
+PCA-methods             Principal components analysis
+PLS-methods             Partial least squares
+PositionDataFrame-class
+                        PositionDataFrame: data frame with spatial
+                        position metadata
+ResultSet-class         ResultSet: Class to contain analysis results
+                        for imaging experiments
+SImageData-class        SImageData: Class containing sparse image data
+SImageSet-class         SIMageSet: Class to contain pixel-sparse
+                        imaging data
+SparseImagingExperiment-class
+                        SparseImagingExperiment: Pixel-sparse imaging
+                        experiments
+XDataFrame-class        XDataFrame: DataFrame with eXtra metadata
+                        columns
+batchProcess-methods    Batch Pre-Processing on an Imaging Dataset
+coregister-methods      Coregister images
+cvApply-methods         Apply cross-validation to imaging analyses
+filter,ImagingExperiment-method
+                        Data transformation and summarization for
+                        imaging experiments
+generateImage           Generate a simulated image
+generateSpectrum        Generate a simulated spectrum
+iSet-class              iSet: Class to contain high-throughput imaging
+                        experiment data and metadata
+image-methods           Plot the pixel data of an imaging dataset
+intensity.colors        Color palettes for imaging
+mz-methods              Manipulate mass-to-charge-ratio values
+normalize-methods       Normalize an imaging dataset
+peakAlign-methods       Peak align an imaging dataset
+peakBin-methods         Peak bin an imaging dataset
+peakFilter-methods      Peak filter an imaging dataset
+peakPick-methods        Peak pick an imaging dataset
+pixelApply-methods      Apply functions over imaging datasets
+plot-methods            Plot the feature data of an imaging dataset
+process-methods         Delayed Processing of Imaging Datasets
+readMSIData             Read mass spectrometry imaging data files
+reduceBaseline-methods
+                        Reduce the baseline for an imaging dataset
+reduceDimension-methods
+                        Reduce the dimension of an imaging dataset
+selectROI-methods       Select regions-of-interest of an imaging
+                        dataset
+smoothSignal-methods    Smooth the spectra of a spectral imaging
+                        dataset
+spatialKMeans-methods   Spatially-aware k-means clustering
+spatialShrunkenCentroids-methods
+                        Spatially-aware shrunken centroid clustering
+                        and classification
+standardizeRuns-methods
+                        Standardize between runs in an imaging dataset
+topLabels-methods       Retrieve top-ranked features from analysis
+                        results
+writeMSIData            Write mass spectrometry imaging data files

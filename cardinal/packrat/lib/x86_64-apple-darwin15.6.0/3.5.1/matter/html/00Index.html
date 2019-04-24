@@ -1,0 +1,641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: A framework for rapid prototyping with binary data on disk</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> A framework for rapid prototyping with binary data on disk
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;matter&rsquo; version 1.8.3</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<p style="text-align: center;">
+<a href="#A">A</a>
+<a href="#B">B</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#F">F</a>
+<a href="#H">H</a>
+<a href="#I">I</a>
+<a href="#K">K</a>
+<a href="#L">L</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#P">P</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#T">T</a>
+<a href="#U">U</a>
+<a href="#V">V</a>
+<a href="#W">W</a>
+<a href="#misc">misc</a>
+</p>
+
+
+<h2><a name="A">-- A --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter-class.html">adata</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">adata-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">all-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">any-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="apply.html">apply</a></td>
+<td>Apply Functions Over "matter" Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="apply.html">apply-method</a></td>
+<td>Apply Functions Over "matter" Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="delayed-ops.html">Arith</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="delayed-ops.html">Arith-method</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">as.array-method</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">as.array-method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">as.data.frame-method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="drle-class.html">as.list-method</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">as.list-method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">as.list-method</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">as.matrix-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">as.matrix-method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">as.matrix-method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">as.matrix-method</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">as.matter</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">as.sparse</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="drle-class.html">as.vector-method</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">as.vector-method</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">as.vector-method</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">as.vector-method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">as.vector-method</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">as.virtual</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">atomdata</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">atomdata-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">atomdata&lt;-</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">atomdata&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+</table>
+
+<h2><a name="B">-- B --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="biglm.html">bigglm</a></td>
+<td>Using "biglm" with "matter"</td></tr>
+<tr><td style="width: 25%;"><a href="biglm.html">bigglm-method</a></td>
+<td>Using "biglm" with "matter"</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">bigglm.out</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="biglm.html">biglm</a></td>
+<td>Using "biglm" with "matter"</td></tr>
+<tr><td style="width: 25%;"><a href="biglm.html">biglm-method</a></td>
+<td>Using "biglm" with "matter"</td></tr>
+<tr><td style="width: 25%;"><a href="bsearch.html">bsearch</a></td>
+<td>Binary Search with Approximate Matching</td></tr>
+</table>
+
+<h2><a name="C">-- C --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="drle-class.html">c-method</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">c-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">c-method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">cbind-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="checksum.html">checksum</a></td>
+<td>Calculate Checksums and Cryptographic Hashes</td></tr>
+<tr><td style="width: 25%;"><a href="checksum.html">checksum-method</a></td>
+<td>Calculate Checksums and Cryptographic Hashes</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">chunksize</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">chunksize-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">chunksize&lt;-</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">chunksize&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="drle-class.html">class:drle</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">class:matter</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">class:matter_arr</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">class:matter_df</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_fc-class.html">class:matter_fc</a></td>
+<td>Factors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">class:matter_list</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">class:matter_mat</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">class:matter_str</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">class:matter_vec</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">class:rep_vt</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">class:sparse_mat</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">class:virtual_mat</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">colMeans-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">colSds</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">colSds-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">colSums-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">colVars</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">colVars-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="combiner-method.html">combiner</a></td>
+<td>Get or Set combiner for an Object</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">combiner-method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="combiner-method.html">combiner&lt;-</a></td>
+<td>Get or Set combiner for an Object</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">combiner&lt;--method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="delayed-ops.html">Compare</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="delayed-ops.html">Compare-method</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">convert_datamode</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">crossprod-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+</table>
+
+<h2><a name="D">-- D --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter-utils.html">data:matter_ex</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">data:matter_msi</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">data:matter_sim</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">datamode</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">datamode-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">datamode&lt;-</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">datamode&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">datamode&lt;--method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">datamode&lt;--method</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">dim-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">dim&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">dim&lt;--method</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">dim&lt;--method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">dimnames-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">dimnames&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">dimnames&lt;--method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="drle-class.html">drle</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="drle-class.html">drle-class</a></td>
+<td>Delta Run Length Encoding</td></tr>
+</table>
+
+<h2><a name="E">-- E --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="delayed-ops.html">exp-method</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+</table>
+
+<h2><a name="F">-- F --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter-class.html">filemode</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">filemode-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">filemode&lt;-</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">filemode&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+</table>
+
+<h2><a name="H">-- H --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter_df-class.html">head-method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="uuid.html">hex2raw</a></td>
+<td>Universally Unique Identifiers</td></tr>
+</table>
+
+<h2><a name="I">-- I --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="drle-class.html">is.drle</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">is.matter</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">is.sparse</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">is.virtual</a></td>
+<td>Virtual Matrices</td></tr>
+</table>
+
+<h2><a name="K">-- K --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="keys-method.html">keys</a></td>
+<td>Get or Set Keys for an Object</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">keys-method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="keys-method.html">keys&lt;-</a></td>
+<td>Get or Set Keys for an Object</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">keys&lt;--method</a></td>
+<td>Sparse Matrices</td></tr>
+</table>
+
+<h2><a name="L">-- L --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="drle-class.html">length-method</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">length-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">length-method</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">length&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">lengths-method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">lengths-method</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_fc-class.html">levels-method</a></td>
+<td>Factors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_fc-class.html">levels&lt;--method</a></td>
+<td>Factors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">lm.prof</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="delayed-ops.html">log-method</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="delayed-ops.html">log10-method</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="delayed-ops.html">log2-method</a></td>
+<td>Delayed Operations on "matter" Objects</td></tr>
+</table>
+
+<h2><a name="M">-- M --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter-utils.html">make_datamode</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">matter</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">matter-class</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">matter-utils</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">matter_arr</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">matter_arr-class</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">matter_df</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">matter_df-class</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">matter_ex</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter_fc-class.html">matter_fc</a></td>
+<td>Factors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_fc-class.html">matter_fc-class</a></td>
+<td>Factors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">matter_list</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">matter_list-class</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">matter_mat</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">matter_mat-class</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">matter_matc</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">matter_matc-class</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">matter_matr</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">matter_matr-class</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">matter_msi</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">matter_sim</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">matter_str</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">matter_str-class</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">matter_vec</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">matter_vec-class</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">max-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">mean</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">mean-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="profmem.html">mem</a></td>
+<td>Profile Memory Use</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">min-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">msi.prof</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+</table>
+
+<h2><a name="N">-- N --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter-class.html">names-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">names&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">names&lt;--method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+</table>
+
+<h2><a name="P">-- P --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter-class.html">paths</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">paths-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">paths&lt;-</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">paths&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">pca.prof</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="prcomp.html">prcomp</a></td>
+<td>Principal Components Analysis for "matter" Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="prcomp.html">prcomp-method</a></td>
+<td>Principal Components Analysis for "matter" Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">prcomp.out</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">prod-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="profmem.html">profmem</a></td>
+<td>Profile Memory Use</td></tr>
+</table>
+
+<h2><a name="R">-- R --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="summary-stats.html">range-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="uuid.html">raw2hex</a></td>
+<td>Universally Unique Identifiers</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">rbind-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">readonly</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">readonly-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">readonly&lt;-</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">readonly&lt;--method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">rep_vt</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">rep_vt-class</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">rowMeans-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">rowSds</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">rowSds-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">rowSums-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">rowVars</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">rowVars-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+</table>
+
+<h2><a name="S">-- S --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="scale.html">scale</a></td>
+<td>Scaling and Centering of "matter" Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="scale.html">scale-method</a></td>
+<td>Scaling and Centering of "matter" Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="scale.html">scale.matter</a></td>
+<td>Scaling and Centering of "matter" Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">sd</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">sd-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">sizeof</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">sparse_mat</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">sparse_mat-class</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">sparse_matc</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">sparse_matc-class</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">sparse_matr</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">sparse_matr-class</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="struct.html">struct</a></td>
+<td>C-Style Structs Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">sum-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">Summary</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+</table>
+
+<h2><a name="T">-- T --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">t-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">t-method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">t-method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">t-method</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">t.matter</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">tail-method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">tcrossprod-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="tolerance-method.html">tolerance</a></td>
+<td>Get or Set Tolerance for an Object</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">tolerance-method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="tolerance-method.html">tolerance&lt;-</a></td>
+<td>Get or Set Tolerance for an Object</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">tolerance&lt;--method</a></td>
+<td>Sparse Matrices</td></tr>
+</table>
+
+<h2><a name="U">-- U --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="uuid.html">uuid</a></td>
+<td>Universally Unique Identifiers</td></tr>
+</table>
+
+<h2><a name="V">-- V --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="summary-stats.html">var</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="summary-stats.html">var-method</a></td>
+<td>Summary Statistics for "matter" Objects</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">virtual_mat</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">virtual_mat-class</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">virtual_matc</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">virtual_matc-class</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">virtual_matr</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">virtual_matr-class</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">vm_used</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+</table>
+
+<h2><a name="W">-- W --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter-class.html">which-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter-utils.html">widest_datamode</a></td>
+<td>Internal Utilities for "matter" Package</td></tr>
+</table>
+
+<h2><a name="misc">-- misc --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="matter_df-class.html">$-method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">$-method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">$&lt;--method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">$&lt;--method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">%*%-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="drle-class.html">[-method</a></td>
+<td>Delta Run Length Encoding</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">[-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">[-method</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">[-method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_fc-class.html">[-method</a></td>
+<td>Factors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">[-method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">[-method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">[-method</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">[-method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">[-method</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">[-method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="virtual_mat-class.html">[-method</a></td>
+<td>Virtual Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter_arr-class.html">[&lt;--method</a></td>
+<td>Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">[&lt;--method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_fc-class.html">[&lt;--method</a></td>
+<td>Factors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">[&lt;--method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_mat-class.html">[&lt;--method</a></td>
+<td>Matrices Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">[&lt;--method</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_vec-class.html">[&lt;--method</a></td>
+<td>Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="sparse_mat-class.html">[&lt;--method</a></td>
+<td>Sparse Matrices</td></tr>
+<tr><td style="width: 25%;"><a href="matter-class.html">[[-method</a></td>
+<td>Vectors, Matrices, and Arrays Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">[[-method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">[[-method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">[[-method</a></td>
+<td>Strings Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="rep_vt.html">[[-method</a></td>
+<td>Virtual Replication of Vectors</td></tr>
+<tr><td style="width: 25%;"><a href="matter_df-class.html">[[&lt;--method</a></td>
+<td>Data Frames Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_list-class.html">[[&lt;--method</a></td>
+<td>Lists of Vectors Stored on Disk</td></tr>
+<tr><td style="width: 25%;"><a href="matter_str-class.html">[[&lt;--method</a></td>
+<td>Strings Stored on Disk</td></tr>
+</table>
+</body></html>

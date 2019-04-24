@@ -1,0 +1,28 @@
+Arith                   Delayed Operations on "matter" Objects
+Summary                 Summary Statistics for "matter" Objects
+apply                   Apply Functions Over "matter" Matrices
+biglm                   Using "biglm" with "matter"
+bsearch                 Binary Search with Approximate Matching
+checksum                Calculate Checksums and Cryptographic Hashes
+combiner                Get or Set combiner for an Object
+drle-class              Delta Run Length Encoding
+keys                    Get or Set Keys for an Object
+matter-class            Vectors, Matrices, and Arrays Stored on Disk
+matter-utils            Internal Utilities for "matter" Package
+matter_arr-class        Arrays Stored on Disk
+matter_df-class         Data Frames Stored on Disk
+matter_fc-class         Factors Stored on Disk
+matter_list-class       Lists of Vectors Stored on Disk
+matter_mat-class        Matrices Stored on Disk
+matter_str-class        Strings Stored on Disk
+matter_vec-class        Vectors Stored on Disk
+prcomp                  Principal Components Analysis for "matter"
+                        Matrices
+profmem                 Profile Memory Use
+rep_vt-class            Virtual Replication of Vectors
+scale                   Scaling and Centering of "matter" Matrices
+sparse_mat-class        Sparse Matrices
+struct                  C-Style Structs Stored on Disk
+tolerance               Get or Set Tolerance for an Object
+uuid                    Universally Unique Identifiers
+virtual_mat-class       Virtual Matrices

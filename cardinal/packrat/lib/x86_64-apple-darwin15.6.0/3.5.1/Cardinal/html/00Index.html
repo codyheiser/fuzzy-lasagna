@@ -1,0 +1,1724 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: A mass spectrometry imaging toolbox for statistical analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> A mass spectrometry imaging toolbox for statistical analysis
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;Cardinal&rsquo; version 2.0.4</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<p style="text-align: center;">
+<a href="# "> </a>
+<a href="#A">A</a>
+<a href="#B">B</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#F">F</a>
+<a href="#G">G</a>
+<a href="#H">H</a>
+<a href="#I">I</a>
+<a href="#J">J</a>
+<a href="#K">K</a>
+<a href="#L">L</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#O">O</a>
+<a href="#P">P</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#T">T</a>
+<a href="#V">V</a>
+<a href="#W">W</a>
+<a href="#X">X</a>
+<a href="#misc">misc</a>
+</p>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="Cardinal-package.html">Cardinal-package</a></td>
+<td>Mass spectrometry imaging tools</td></tr>
+</table>
+
+<h2><a name="A">-- A --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">abstract-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">alpha.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">annotatedDataFrameFrom-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">as.env-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">as.env-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">as.env-method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">as.list-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">as.list-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">as.list-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">as.list-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+</table>
+
+<h2><a name="B">-- B --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">baselineReduction</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">baselineReduction-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">baselineReduction-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">baselineReduction&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">baselineReduction&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">baselineReduction&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="batchProcess-methods.html">batchProcess</a></td>
+<td>Batch Pre-Processing on an Imaging Dataset</td></tr>
+<tr><td style="width: 25%;"><a href="batchProcess-methods.html">batchProcess-method</a></td>
+<td>Batch Pre-Processing on an Imaging Dataset</td></tr>
+<tr><td style="width: 25%;"><a href="batchProcess-methods.html">batchProcess-methods</a></td>
+<td>Batch Pre-Processing on an Imaging Dataset</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">Binmat</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">Binmat-class</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">bw.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+</table>
+
+<h2><a name="C">-- C --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="Cardinal-package.html">Cardinal</a></td>
+<td>Mass spectrometry imaging tools</td></tr>
+<tr><td style="width: 25%;"><a href="deprecated.html">Cardinal-deprecated</a></td>
+<td>Deprecated functions and methods in Cardinal</td></tr>
+<tr><td style="width: 25%;"><a href="reexports.html">Cardinal-reexports</a></td>
+<td>Objects exported from other packages</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">cbind-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">cbind-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">cbind-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">cbind-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">cbind-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">cbind-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">cbind-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">cbind-method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">centroided</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">centroided-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">centroided-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">centroided-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">centroided&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">centroided&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">centroided&lt;--method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">centroided&lt;--method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">class:Binmat</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">class:Hashmat</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">class:IAnnotatedDataFrame</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">class:ImageArrayList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">class:ImageData</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">class:ImageList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">class:ImagingExperiment</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">class:iSet</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">class:MassDataFrame</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">class:MIAPE-Imaging</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSContinuousImagingExperiment-class.html">class:MSContinuousImagingExperiment</a></td>
+<td>MSContinuousImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">class:MSContinuousImagingSpectraList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">class:MSImageData</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">class:MSImageProcess</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">class:MSImageSet</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">class:MSImagingExperiment</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">class:MSImagingInfo</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">class:MSProcessedImagingExperiment</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">class:MSProcessedImagingSpectraList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">class:OPLS</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">class:PCA</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">class:PLS</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">class:PositionDataFrame</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">class:ResultSet</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">class:SImageData</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">class:SImageSet</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">class:SimpleImageArrayList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">class:SimpleImageList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">class:SparseImagingExperiment</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">class:SpatialKMeans</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">class:SpatialShrunkenCentroids</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">class:XDataFrame</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">colnames-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">colnames-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">colnames&lt;--method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">colnames&lt;--method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">color.map</a></td>
+<td>Color palettes for imaging</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">combine-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">combine-method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">combine-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">combine-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">combine-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">combine-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">combine-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">combine-method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">combine-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">combiner-method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">combiner&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coord</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">coord-method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coord-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">coord-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coord-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">coord-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coord-methods</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coord&lt;-</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">coord&lt;--method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coord&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">coord&lt;--method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">coord&lt;--method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coord&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">coord&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordinates</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordinates-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coordinates-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordinates-methods</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordinates&lt;-</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordinates&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coordinates&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordLabels</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">coordLabels-method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordLabels-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coordLabels-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">coordLabels-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordLabels-methods</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordLabels&lt;-</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">coordLabels&lt;--method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordLabels&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">coordLabels&lt;--method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coordLabels&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">coordLabels&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordnames</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordnames-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coordnames-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordnames-methods</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordnames&lt;-</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">coordnames&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">coordnames&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="coregister-methods.html">coregister</a></td>
+<td>Coregister images</td></tr>
+<tr><td style="width: 25%;"><a href="coregister-methods.html">coregister-method</a></td>
+<td>Coregister images</td></tr>
+<tr><td style="width: 25%;"><a href="coregister-methods.html">coregister-methods</a></td>
+<td>Coregister images</td></tr>
+<tr><td style="width: 25%;"><a href="cvApply-methods.html">cvApply</a></td>
+<td>Apply cross-validation to imaging analyses</td></tr>
+<tr><td style="width: 25%;"><a href="cvApply-methods.html">cvApply-method</a></td>
+<td>Apply cross-validation to imaging analyses</td></tr>
+<tr><td style="width: 25%;"><a href="cvApply-methods.html">cvApply-methods</a></td>
+<td>Apply cross-validation to imaging analyses</td></tr>
+</table>
+
+<h2><a name="D">-- D --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="Binmat-class.html">dim-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">dim-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">dim-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">dim-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">dim-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">dim-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">dim-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">dim&lt;--method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">dim&lt;--method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">dimnames-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">dimnames-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">dimnames-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">dimnames&lt;--method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">dimnames&lt;--method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">dims-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">dims-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">dims-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">dims-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">dims-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">dims-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">discrete.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">divergent.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+</table>
+
+<h2><a name="E">-- E --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">embeddingMethod</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">embeddingMethod-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">embeddingMethod&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">embeddingMethod&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">experimentData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">experimentData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">expinfo-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+</table>
+
+<h2><a name="F">-- F --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">fData</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">fData-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">fData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">fData-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">fData&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">fData&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">fData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="pixelApply-methods.html">featureApply</a></td>
+<td>Apply functions over imaging datasets</td></tr>
+<tr><td style="width: 25%;"><a href="pixelApply-methods.html">featureApply-method</a></td>
+<td>Apply functions over imaging datasets</td></tr>
+<tr><td style="width: 25%;"><a href="pixelApply-methods.html">featureApply-methods</a></td>
+<td>Apply functions over imaging datasets</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureData</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureData-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">featureData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureData-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureData&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureData&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">featureData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureNames</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureNames-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">featureNames-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">featureNames-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureNames-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureNames&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">featureNames&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">featureNames&lt;--method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">featureNames&lt;--method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">featureNames&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">features</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">features-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">features-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">features-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">features-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">features-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">files</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">files-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">files&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">files&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="filter-methods.html">filter-method</a></td>
+<td>Data transformation and summarization for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">fvarLabels-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">fvarLabels&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">fvarMetadata-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">fvarMetadata&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+</table>
+
+<h2><a name="G">-- G --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="generateImage.html">generateImage</a></td>
+<td>Generate a simulated image</td></tr>
+<tr><td style="width: 25%;"><a href="generateSpectrum.html">generateSpectrum</a></td>
+<td>Generate a simulated spectrum</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">gradient.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">gridded-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">gridded-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">gridded&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">gridded&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+</table>
+
+<h2><a name="H">-- H --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">Hashmat</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">Hashmat-class</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+</table>
+
+<h2><a name="I">-- I --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">IAnnotatedDataFrame</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">IAnnotatedDataFrame-class</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">iData</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">iData-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">iData-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">iData-method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">iData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">iData-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">iData&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">iData&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSContinuousImagingExperiment-class.html">iData&lt;--method</a></td>
+<td>MSContinuousImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">iData&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">iData&lt;--method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">iData&lt;--method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">iData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="image-methods.html">image</a></td>
+<td>Plot the pixel data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="image-methods.html">image-method</a></td>
+<td>Plot the pixel data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="image-methods.html">image-methods</a></td>
+<td>Plot the pixel data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="image-methods.html">image3D</a></td>
+<td>Plot the pixel data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="image-methods.html">image3D-method</a></td>
+<td>Plot the pixel data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="image-methods.html">image3D-methods</a></td>
+<td>Plot the pixel data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">ImageArrayList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">ImageArrayList-class</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">ImageData</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">imageData</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">ImageData-class</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">imageData-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">imageData-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">imageData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">imageData-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">imageData&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">imageData&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSContinuousImagingExperiment-class.html">imageData&lt;--method</a></td>
+<td>MSContinuousImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">imageData&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">imageData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">ImageList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">ImageList-class</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">imageShape</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">imageShape-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">imageShape&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">imageShape&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">ImagingExperiment</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">ImagingExperiment-class</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">initialize-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">initialize-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">initialize-method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">initialize-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">initialize-method</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">initialize-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">initialize-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">initialize-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">initialize-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">initialize-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">initialize-method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">initialize-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">inSituChemistry</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">inSituChemistry-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">inSituChemistry&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">inSituChemistry&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentModel</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentModel-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">instrumentModel-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentModel&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentModel&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">instrumentModel&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentVendor</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentVendor-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">instrumentVendor-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentVendor&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">instrumentVendor&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">instrumentVendor&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">intensity.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">ionizationType</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">ionizationType-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">ionizationType-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">ionizationType&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">ionizationType&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">ionizationType&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">iSet</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">iSet-class</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+</table>
+
+<h2><a name="J">-- J --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="colors-functions.html">jet.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+</table>
+
+<h2><a name="K">-- K --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">keys</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">keys-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">keys-method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">keys&lt;-</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">keys&lt;--method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">keys&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+</table>
+
+<h2><a name="L">-- L --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">lapply-method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">length-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">length-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">length-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">length-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">length-method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">lineScanDirection</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">lineScanDirection-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">lineScanDirection-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">lineScanDirection&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">lineScanDirection&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">lineScanDirection&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">logLik-method</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+</table>
+
+<h2><a name="M">-- M --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">massAnalyzerType</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">massAnalyzerType-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">massAnalyzerType-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">massAnalyzerType&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">massAnalyzerType&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">massAnalyzerType&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">MassDataFrame</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">MassDataFrame-class</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">matrixApplication</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">matrixApplication-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">matrixApplication-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">matrixApplication&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">matrixApplication&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">matrixApplication&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">MIAPE-Imaging</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">MIAPE-Imaging-class</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">modelData</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">modelData-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">modelData&lt;-</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">modelData&lt;--method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSContinuousImagingExperiment-class.html">MSContinuousImagingExperiment</a></td>
+<td>MSContinuousImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSContinuousImagingExperiment-class.html">MSContinuousImagingExperiment-class</a></td>
+<td>MSContinuousImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">MSContinuousImagingSpectraList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">MSContinuousImagingSpectraList-class</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">msiInfo</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">msiInfo-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">msiInfo-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">MSImageData</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">MSImageData-class</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">MSImageProcess</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">MSImageProcess-class</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">MSImageSet</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">MSImageSet-class</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">MSImagingExperiment</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">MSImagingExperiment-class</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">MSImagingInfo</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">MSImagingInfo-class</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">MSProcessedImagingExperiment</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">MSProcessedImagingExperiment-class</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">MSProcessedImagingSpectraList</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">MSProcessedImagingSpectraList-class</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="filter-methods.html">mutate-method</a></td>
+<td>Data transformation and summarization for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="mz-methods.html">mz</a></td>
+<td>Manipulate mass-to-charge-ratio values</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">mz-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">mz-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">mz-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="mz-methods.html">mz-method</a></td>
+<td>Manipulate mass-to-charge-ratio values</td></tr>
+<tr><td style="width: 25%;"><a href="mz-methods.html">mz-methods</a></td>
+<td>Manipulate mass-to-charge-ratio values</td></tr>
+<tr><td style="width: 25%;"><a href="mz-methods.html">mz&lt;-</a></td>
+<td>Manipulate mass-to-charge-ratio values</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">mz&lt;--method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">mz&lt;--method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">mz&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">mz&lt;--method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">mzData</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">mzData-method</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">mzData-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">mzData-method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">mzData-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">mzData-methods</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">mzData&lt;-</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">mzData&lt;--method</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">mzData&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">mzData&lt;--method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+</table>
+
+<h2><a name="N">-- N --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ImageData-class.html">names-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">names-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">names-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">names-method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">names&lt;--method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">names&lt;--method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">normalization</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">normalization-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">normalization-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">normalization&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">normalization&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">normalization&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="normalize-methods.html">normalize</a></td>
+<td>Normalize an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="normalize-methods.html">normalize-method</a></td>
+<td>Normalize an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="normalize-methods.html">normalize-methods</a></td>
+<td>Normalize an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="normalize-methods.html">normalize.tic</a></td>
+<td>Normalize an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">notes-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">notes&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+</table>
+
+<h2><a name="O">-- O --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">OPLS</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">OPLS-class</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">OPLS-method</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">OPLS-methods</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">otherInfo-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+</table>
+
+<h2><a name="P">-- P --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="PCA-methods.html">PCA</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">PCA-class</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">PCA-method</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">PCA-methods</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pData</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">pData-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pData-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">pData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pData-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pData&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">pData&lt;--method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pData&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">pData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="peakAlign-methods.html">peakAlign</a></td>
+<td>Peak align an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakAlign-methods.html">peakAlign-method</a></td>
+<td>Peak align an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakAlign-methods.html">peakAlign-methods</a></td>
+<td>Peak align an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakAlign-methods.html">peakAlign.diff</a></td>
+<td>Peak align an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakAlign-methods.html">peakAlign.DP</a></td>
+<td>Peak align an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakBin-methods.html">peakBin</a></td>
+<td>Peak bin an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakBin-methods.html">peakBin-method</a></td>
+<td>Peak bin an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakBin-methods.html">peakBin-methods</a></td>
+<td>Peak bin an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">peakData</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">peakData-method</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">peakData-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">peakData-method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">peakData-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">peakData-methods</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">peakData&lt;-</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageData-class.html">peakData&lt;--method</a></td>
+<td>MSImageData: Class containing mass spectrometry image data</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">peakData&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">peakData&lt;--method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="peakFilter-methods.html">peakFilter</a></td>
+<td>Peak filter an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakFilter-methods.html">peakFilter-method</a></td>
+<td>Peak filter an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakFilter-methods.html">peakFilter-methods</a></td>
+<td>Peak filter an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakFilter-methods.html">peakFilter.freq</a></td>
+<td>Peak filter an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakPick-methods.html">peakPick</a></td>
+<td>Peak pick an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakPick-methods.html">peakPick-method</a></td>
+<td>Peak pick an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakPick-methods.html">peakPick-methods</a></td>
+<td>Peak pick an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakPick-methods.html">peakPick.adaptive</a></td>
+<td>Peak pick an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakPick-methods.html">peakPick.limpic</a></td>
+<td>Peak pick an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="peakPick-methods.html">peakPick.simple</a></td>
+<td>Peak pick an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">peakPicking</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">peakPicking-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">peakPicking-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">peakPicking&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">peakPicking&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">peakPicking&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">peaks</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">peaks-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">peaks-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">peaks-methods</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">peaks&lt;-</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">peaks&lt;--method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">peaks&lt;--method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="pixelApply-methods.html">pixelApply</a></td>
+<td>Apply functions over imaging datasets</td></tr>
+<tr><td style="width: 25%;"><a href="pixelApply-methods.html">pixelApply-method</a></td>
+<td>Apply functions over imaging datasets</td></tr>
+<tr><td style="width: 25%;"><a href="pixelApply-methods.html">pixelApply-methods</a></td>
+<td>Apply functions over imaging datasets</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelData</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelData-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">pixelData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelData-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelData&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelData&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">pixelData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelNames</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">pixelNames-method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelNames-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">pixelNames-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">pixelNames-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelNames-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelNames&lt;-</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">pixelNames&lt;--method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixelNames&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">pixelNames&lt;--method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">pixelNames&lt;--method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">pixelNames&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixels</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixels-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">pixels-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">pixels-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">pixels-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">pixels-methods</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">pixelSize</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">pixelSize-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">pixelSize-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">pixelSize&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">pixelSize&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">pixelSize&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="plot-methods.html">plot</a></td>
+<td>Plot the feature data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="plot-methods.html">plot-method</a></td>
+<td>Plot the feature data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="plot-methods.html">plot-methods</a></td>
+<td>Plot the feature data of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="cvApply-methods.html">plot.summary.CrossValidated</a></td>
+<td>Apply cross-validation to imaging analyses</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">plot.summary.OPLS</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">plot.summary.PCA</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">plot.summary.PLS</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">plot.summary.SpatialKMeans</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">plot.summary.SpatialShrunkenCentroids</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">PLS</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">PLS-class</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">PLS-method</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">PLS-methods</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">positionArray</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">positionArray-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">positionArray&lt;-</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">positionArray&lt;--method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">PositionDataFrame</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">PositionDataFrame-class</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">predict-method</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">predict-method</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">predict-method</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">predict-method</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">preproc-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">preproc-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">preproc&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="cvApply-methods.html">print.summary.CrossValidated</a></td>
+<td>Apply cross-validation to imaging analyses</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">print.summary.iSet</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">print.summary.OPLS</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">print.summary.PCA</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">print.summary.PLS</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">print.summary.SpatialKMeans</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">print.summary.SpatialShrunkenCentroids</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="process-methods.html">process</a></td>
+<td>Delayed Processing of Imaging Datasets</td></tr>
+<tr><td style="width: 25%;"><a href="process-methods.html">process-method</a></td>
+<td>Delayed Processing of Imaging Datasets</td></tr>
+<tr><td style="width: 25%;"><a href="process-methods.html">process-methods</a></td>
+<td>Delayed Processing of Imaging Datasets</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">processingData</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">processingData-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">processingData-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">processingData-methods</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">processingData&lt;-</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">processingData&lt;--method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">processingData&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">prochistory</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">prochistory-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">prochistory&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">prochistory&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">protocolData-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">protocolData&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">pubMedIds-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">pubMedIds&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+</table>
+
+<h2><a name="R">-- R --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="Binmat-class.html">rbind-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">rbind-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">rbind-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">rbind-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">rbind-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">rbind-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">rbind-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">rbind-method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="readMSIData.html">readAnalyze</a></td>
+<td>Read mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="readMSIData.html">readImzML</a></td>
+<td>Read mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="readMSIData.html">readMSIData</a></td>
+<td>Read mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="reduceBaseline-methods.html">reduceBaseline</a></td>
+<td>Reduce the baseline for an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceBaseline-methods.html">reduceBaseline-method</a></td>
+<td>Reduce the baseline for an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceBaseline-methods.html">reduceBaseline-methods</a></td>
+<td>Reduce the baseline for an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceBaseline-methods.html">reduceBaseline.median</a></td>
+<td>Reduce the baseline for an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceDimension-methods.html">reduceDimension</a></td>
+<td>Reduce the dimension of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceDimension-methods.html">reduceDimension-method</a></td>
+<td>Reduce the dimension of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceDimension-methods.html">reduceDimension-methods</a></td>
+<td>Reduce the dimension of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceDimension-methods.html">reduceDimension.bin</a></td>
+<td>Reduce the dimension of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceDimension-methods.html">reduceDimension.peaks</a></td>
+<td>Reduce the dimension of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="reduceDimension-methods.html">reduceDimension.resample</a></td>
+<td>Reduce the dimension of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">regeneratePositions</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">regeneratePositions-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">regeneratePositions-method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">resolution</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">resolution-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">resolution-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">resolution-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">resolution&lt;-</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">resolution&lt;--method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">resolution&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">resolution&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">resultData</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">resultData-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">resultData&lt;-</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">resultData&lt;--method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">ResultSet</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">ResultSet-class</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="colors-functions.html">risk.colors</a></td>
+<td>Color palettes for imaging</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">rownames-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">rownames-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">rownames&lt;--method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">rownames&lt;--method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">run</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">run-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">run-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">run&lt;-</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">run&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">run&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">runNames</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">runNames-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">runNames-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">runNames&lt;-</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">runNames&lt;--method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">runNames&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+</table>
+
+<h2><a name="S">-- S --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">sampleNames-method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">sampleNames-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">sampleNames&lt;--method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">sampleNames&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">samples-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanDirection</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanDirection-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanDirection-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanDirection&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanDirection&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanDirection&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPattern</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPattern-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanPattern-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPattern&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPattern&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanPattern&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPolarity</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPolarity-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanPolarity-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPolarity&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanPolarity&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanPolarity&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scans-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanType</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanType-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanType-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanType&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">scanType&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">scanType&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="deprecated.html">select-method</a></td>
+<td>Deprecated functions and methods in Cardinal</td></tr>
+<tr><td style="width: 25%;"><a href="filter-methods.html">select-method</a></td>
+<td>Data transformation and summarization for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="selectROI-methods.html">selectROI</a></td>
+<td>Select regions-of-interest of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="selectROI-methods.html">selectROI-method</a></td>
+<td>Select regions-of-interest of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="selectROI-methods.html">selectROI-methods</a></td>
+<td>Select regions-of-interest of an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">show-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">show-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">show-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">show-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">show-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">show-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">show-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">show-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">show-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">show-method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">SImageData</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">SImageData-class</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">SImageSet</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">SImageSet-class</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">SimpleImageArrayList-class</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">SimpleImageList-class</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">smoothing</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">smoothing-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">smoothing-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">smoothing&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">smoothing&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">smoothing&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="smoothSignal-methods.R.html">smoothSignal</a></td>
+<td>Smooth the spectra of a spectral imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="smoothSignal-methods.R.html">smoothSignal-method</a></td>
+<td>Smooth the spectra of a spectral imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="smoothSignal-methods.R.html">smoothSignal-methods</a></td>
+<td>Smooth the spectra of a spectral imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="smoothSignal-methods.R.html">smoothSignal.gaussian</a></td>
+<td>Smooth the spectra of a spectral imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="smoothSignal-methods.R.html">smoothSignal.ma</a></td>
+<td>Smooth the spectra of a spectral imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="smoothSignal-methods.R.html">smoothSignal.sgolay</a></td>
+<td>Smooth the spectra of a spectral imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareName</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareName-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareName&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareName&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareVersion</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareVersion-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareVersion&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">softwareVersion&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">SparseImagingExperiment</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">SparseImagingExperiment-class</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">spatialKMeans</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">SpatialKMeans-class</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">spatialKMeans-method</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">spatialKMeans-methods</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">spatialShrunkenCentroids</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">SpatialShrunkenCentroids-class</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">spatialShrunkenCentroids-method</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">spatialShrunkenCentroids-methods</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenOrigin</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenOrigin-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenOrigin&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenOrigin&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenType</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenType-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenType&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">specimenType&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">spectra</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">spectra-method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">spectra-method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">spectra-methods</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">spectra&lt;-</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageSet-class.html">spectra&lt;--method</a></td>
+<td>MSImageSet: Class to contain mass spectrometry imaging experiment data</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingExperiment-class.html">spectra&lt;--method</a></td>
+<td>MSImagingExperiment: Mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">spectrumRepresentation</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">spectrumRepresentation-method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">spectrumRepresentation-method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">spectrumRepresentation&lt;-</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImageProcess-class.html">spectrumRepresentation&lt;--method</a></td>
+<td>MSImageProcess: Class containing mass spectral preprocessing information</td></tr>
+<tr><td style="width: 25%;"><a href="MSImagingInfo-class.html">spectrumRepresentation&lt;--method</a></td>
+<td>MSImagingInfo: Mass spectrometry imaging metadata for imzML conversion</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">stainingMethod</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">stainingMethod-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">stainingMethod&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">stainingMethod&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="standardizeRuns-methods.html">standardizeRuns</a></td>
+<td>Standardize between runs in an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="standardizeRuns-methods.html">standardizeRuns-method</a></td>
+<td>Standardize between runs in an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="standardizeRuns-methods.html">standardizeRuns-methods</a></td>
+<td>Standardize between runs in an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="standardizeRuns-methods.html">standardizeRuns.sum</a></td>
+<td>Standardize between runs in an imaging dataset</td></tr>
+<tr><td style="width: 25%;"><a href="deprecated.html">standardizeSamples</a></td>
+<td>Deprecated functions and methods in Cardinal</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">storageMode-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">storageMode-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">storageMode&lt;--method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">storageMode&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="filter-methods.html">summarize-method</a></td>
+<td>Data transformation and summarization for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="OPLS-methods.html">summary-method</a></td>
+<td>Orthogonal partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="PCA-methods.html">summary-method</a></td>
+<td>Principal components analysis</td></tr>
+<tr><td style="width: 25%;"><a href="PLS-methods.html">summary-method</a></td>
+<td>Partial least squares</td></tr>
+<tr><td style="width: 25%;"><a href="cvApply-methods.html">summary-method</a></td>
+<td>Apply cross-validation to imaging analyses</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">summary-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="spatialKMeans-methods.html">summary-method</a></td>
+<td>Spatially-aware k-means clustering</td></tr>
+<tr><td style="width: 25%;"><a href="spatialShrunkenCentroids-methods.html">summary-method</a></td>
+<td>Spatially-aware shrunken centroid clustering and classification</td></tr>
+</table>
+
+<h2><a name="T">-- T --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueThickness</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueThickness-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueThickness&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueThickness&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueWash</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueWash-method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueWash&lt;-</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MIAPE-Imaging-class.html">tissueWash&lt;--method</a></td>
+<td>MIAPE-Imaging: Class for storing mass spectrometry imaging experiment information</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">tolerance-method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">tolerance&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="topLabels-methods.html">topLabels</a></td>
+<td>Retrieve top-ranked features from analysis results</td></tr>
+<tr><td style="width: 25%;"><a href="topLabels-methods.html">topLabels-method</a></td>
+<td>Retrieve top-ranked features from analysis results</td></tr>
+<tr><td style="width: 25%;"><a href="topLabels-methods.html">topLabels-methods</a></td>
+<td>Retrieve top-ranked features from analysis results</td></tr>
+</table>
+
+<h2><a name="V">-- V --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="iSet-class.html">varLabels-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">varLabels&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">varMetadata-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">varMetadata&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+</table>
+
+<h2><a name="W">-- W --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="writeMSIData.html">writeAnalyze</a></td>
+<td>Write mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="writeMSIData.html">writeAnalyze-method</a></td>
+<td>Write mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="writeMSIData.html">writeImzML</a></td>
+<td>Write mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="writeMSIData.html">writeImzML-method</a></td>
+<td>Write mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="writeMSIData.html">writeMSIData</a></td>
+<td>Write mass spectrometry imaging data files</td></tr>
+<tr><td style="width: 25%;"><a href="writeMSIData.html">writeMSIData-method</a></td>
+<td>Write mass spectrometry imaging data files</td></tr>
+</table>
+
+<h2><a name="X">-- X --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">XDataFrame</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">XDataFrame-class</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+</table>
+
+<h2><a name="misc">-- misc --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">$-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">$-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">$-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">$&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">$&lt;--method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">$&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="reexports.html">%&gt;%</a></td>
+<td>Objects exported from other packages</td></tr>
+<tr><td style="width: 25%;"><a href="Binmat-class.html">[-method</a></td>
+<td>Binmat: On-disk matrix class using on-demand disk access</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">[-method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="IAnnotatedDataFrame-class.html">[-method</a></td>
+<td>IAnnotatedDataFrame: Class containing measured variables and their metadata for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">[-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="MSContinuousImagingExperiment-class.html">[-method</a></td>
+<td>MSContinuousImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">[-method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MassDataFrame-class.html">[-method</a></td>
+<td>MassDataFrame: data frame with mass-to-charge ratio metadata</td></tr>
+<tr><td style="width: 25%;"><a href="PositionDataFrame-class.html">[-method</a></td>
+<td>PositionDataFrame: data frame with spatial position metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">[-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="SImageData-class.html">[-method</a></td>
+<td>SImageData: Class containing sparse image data</td></tr>
+<tr><td style="width: 25%;"><a href="SImageSet-class.html">[-method</a></td>
+<td>SIMageSet: Class to contain pixel-sparse imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">[-method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="Hashmat-class.html">[&lt;--method</a></td>
+<td>Hashmat: Sparse matrix class using lists as hash tables</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">[&lt;--method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="SparseImagingExperiment-class.html">[&lt;--method</a></td>
+<td>SparseImagingExperiment: Pixel-sparse imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">[[-method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">[[-method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">[[-method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="ResultSet-class.html">[[-method</a></td>
+<td>ResultSet: Class to contain analysis results for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">[[-method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+<tr><td style="width: 25%;"><a href="ImageData-class.html">[[&lt;--method</a></td>
+<td>ImageData: Class containing arrays of imaging data</td></tr>
+<tr><td style="width: 25%;"><a href="ImageList-class.html">[[&lt;--method</a></td>
+<td>ImageList: Abstract image data list</td></tr>
+<tr><td style="width: 25%;"><a href="ImagingExperiment-class.html">[[&lt;--method</a></td>
+<td>ImagingExperiment: Abstract class for imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSContinuousImagingExperiment-class.html">[[&lt;--method</a></td>
+<td>MSContinuousImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="MSProcessedImagingExperiment-class.html">[[&lt;--method</a></td>
+<td>MSProcessedImagingExperiment: Dense mass spectrometry imaging experiments</td></tr>
+<tr><td style="width: 25%;"><a href="XDataFrame-class.html">[[&lt;--method</a></td>
+<td>XDataFrame: DataFrame with eXtra metadata columns</td></tr>
+<tr><td style="width: 25%;"><a href="iSet-class.html">[[&lt;--method</a></td>
+<td>iSet: Class to contain high-throughput imaging experiment data and metadata</td></tr>
+</table>
+</body></html>

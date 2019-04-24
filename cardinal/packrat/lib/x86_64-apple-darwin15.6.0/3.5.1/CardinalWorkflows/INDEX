@@ -1,0 +1,6 @@
+CardinalWorkflows-package
+                        Datasets and workflows for the Cardinal mass
+                        spectrometry imaging package
+data:cardinal           Cardinal Painting
+data:pig206             Cross-Section of a Whole Pig Fetus
+data:rcc                Human Renal Cell Carcinoma

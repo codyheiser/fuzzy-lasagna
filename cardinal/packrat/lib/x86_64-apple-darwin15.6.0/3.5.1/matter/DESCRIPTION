@@ -1,0 +1,29 @@
+Package: matter
+Type: Package
+Title: A framework for rapid prototyping with binary data on disk
+Version: 1.8.3
+Date: 2016-10-11
+Author: Kylie A. Bemis <k.bemis@northeastern.edu>
+Maintainer: Kylie A. Bemis <k.bemis@northeastern.edu>
+Description: Memory-efficient reading, writing, and manipulation of
+        structured binary data on disk as vectors, matrices, arrays,
+        lists, and data frames.
+License: Artistic-2.0
+Depends: R (>= 3.5), methods, stats, biglm
+Imports: BiocGenerics, digest, irlba, utils
+Suggests: BiocStyle, testthat
+Collate: matterGenerics.R utils.R drle.R atoms.R matter.R matter_vec.R
+        matter_mat.R matter_arr.R matter_list.R matter_str.R
+        matter_fc.R matter_tbl.R matter_vt.R matter_df.R sparse_mat.R
+        virtual_mat.R rep_vt.R coerce.R stats.R apply.R scale.R biglm.R
+        prcomp.R
+biocViews: Software, Infrastructure
+URL: https://github.com/kuwisdelu/matter
+git_url: https://git.bioconductor.org/packages/matter
+git_branch: RELEASE_3_8
+git_last_commit: 4687b83
+git_last_commit_date: 2018-12-18
+Date/Publication: 2018-12-18
+NeedsCompilation: yes
+Packaged: 2018-12-19 02:07:07 UTC; biocbuild
+Built: R 3.5.1; x86_64-apple-darwin15.6.0; 2018-12-19 09:20:29 UTC; unix

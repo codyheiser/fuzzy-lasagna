@@ -1,0 +1,23 @@
+Package: CardinalWorkflows
+Type: Package
+Title: Datasets and workflows for the Cardinal mass spectrometry
+        imaging package
+Version: 1.14.0
+Date: 2015-1-12
+Author: Kylie A. Bemis <k.bemis@northeastern.edu>
+Maintainer: Kylie A. Bemis <k.bemis@northeastern.edu>
+Description: Datasets and workflows for Cardinal: DESI and MALDI
+        examples including pig fetus, cardinal painting, and human RCC.
+License: Artistic-2.0
+Depends: R (>= 2.10), Cardinal
+Suggests: BiocStyle
+biocViews: ExperimentData, MassSpectrometryData,
+        ImagingMassSpectrometryData
+git_url: https://git.bioconductor.org/packages/CardinalWorkflows
+git_branch: RELEASE_3_8
+git_last_commit: bace2d8
+git_last_commit_date: 2018-10-30
+Date/Publication: 2018-11-01
+NeedsCompilation: no
+Packaged: 2018-11-01 16:57:59 UTC; biocbuild
+Built: R 3.5.1; ; 2019-03-06 23:18:36 UTC; unix

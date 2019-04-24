@@ -1,0 +1,459 @@
+
+CHANGES IN VERSION 1.8.3 [2018-12-18]
+-----------------------------------
+
+BUG FIXES
+
+    o Fixed bug in atoms() where 'index_offset' and 'index_extent'
+        would overflow when creating long 'matter_vec' objects
+
+CHANGES IN VERSION 1.8.2 [2018-12-13]
+-----------------------------------
+
+BUG FIXES
+
+    o Fixed large file offset bug on Windows (again)
+
+CHANGES IN VERSION 1.8.1 [2018-12-11]
+-----------------------------------
+
+BUG FIXES
+
+    o Fixed bug causing large files to read incorrectly on Windows
+
+CHANGES IN VERSION 1.7.6 [2018-7-24]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added 'apply' methods for 'sparse_mat' and 'virtual_mat'
+    o Added 'vm_used' function to exported internal utilities
+    o Can infer length of 'matter_vec' from paths when missing
+    o Can coerce 'matter_list' to 'matter_matc' or 'matter_matr'
+        if all elements of the list are the same length
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Initializing a matter object with data to an existing file
+        no longer results in a warning if 'filemode' is supplied
+
+BUG FIXES
+
+    o Fixed bug where subsetting 'sparse_mat' objects
+        would pull 'matter_list' key-value pairs into memory
+    o Subsetting 'sparse_mat' objects with out-of-bounds
+        subscripts when 'drop=NULL' is now an error
+
+CHANGES IN VERSION 1.7.5 [2018-7-23]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added 'as.matrix' methods for 'sparse_mat' and 'virtual_mat'
+
+CHANGES IN VERSION 1.7.4 [2018-7-23]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added coercion from 'matter_mat' to 'matter_list'
+
+CHANGES IN VERSION 1.7.3 [2018-7-23]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added 'rep_vt' class for virtual replicated vectors
+
+CHANGES IN VERSION 1.7.2 [2018-7-22]
+-----------------------------------
+
+NEW FEATURES
+
+    o Updated installation instructions for BiocManager
+    o Setting 'sparse_mat' keys also updated nrows/ncols
+
+BUG FIXES
+
+    o Fixed mem() to reflect R >= 3.5 gc() function
+
+CHANGES IN VERSION 1.7.1 [2018-5-18]
+-----------------------------------
+
+BUG FIXES
+
+    o Fixed file.exists() bug when length(paths) > 1
+
+CHANGES IN VERSION 1.5.4 [2017-12-2]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added 'struct' convenience function for on-disk
+        C-style structs (wrapper for 'matter_list')
+
+CHANGES IN VERSION 1.5.3 [2017-12-1]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added remainder of Summary group, including 'range',
+        'min', 'max', 'prod', 'any', and 'all' methods
+    o Added options(matter.cast.warning=FALSE) for
+        turning off C type coercion warnings
+    o Exported low-level utilities 'sizeof', 'make_datamode',
+        'convert_datamode', and 'widest_datamode'
+    o Added 'combiner' generic function and method for
+        setting/getting the 'combiner' for 'sparse_mat'
+    o Added 'min' and 'max' combiner functions for
+        'sparse_mat' matrices with tolerance > 0
+    o Added 'biglm' method for 'matter_df' data frames
+
+BUG FIXES
+
+    o Fixed bug when coercing 'matter_list' to 'matter_vec'
+
+CHANGES IN VERSION 1.5.2 [2017-11-12]
+-----------------------------------
+
+NEW FEATURES
+
+    o All 'matter' subclasses now support endomorphic
+        subsetting via 'drop=NULL' wherever appropriate
+    o Setting the 'dim' slot via 'dim<-' now switches
+        the class between 'matter_vec' and 'matter_arr'
+    o Added 'virtual_mat' class for virtual matrices
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Use 'drop=NULL' from now on instead of 'drop=NA'
+        to do endomorphic subsetting of matter matrices
+    o Added 'matter_vt' virtual class for matter objects
+        which may exist both on-disk and in-memory
+    o Added 'matter_tbl' virtual class for data tables
+
+BUG FIXES
+
+    o Fixed read/write bug when subsetting across atoms
+
+CHANGES IN VERSION 1.5.1 [2017-11-1]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added 'sparse_mat' class for sparse matrics (potentially
+        on-disk) with subclasses 'sparse_matc' for CSC matrices
+        and 'sparse_matr' for CSR matrices
+    o Added 'bsearch' function for fast binary searches
+    o Added 'uuid' function for generating UUIDs as both 'raw' and
+        and 'character' vectors
+    o Added a 'checksum' method for doing sha1 and md5 checksums
+        of all files associated with a 'matter' object
+
+CHANGES IN VERSION 1.3.8 [2017-10-26]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added 'matter_fc' class for on-disk factors
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Added character encodings to 'matter_str' on-disk strings
+
+BUG FIXES
+
+    o Fixed bug in 'matter_df' when subsetting by columns
+    o Fixed bug when coercing 'data.frame's to 'matter_df'
+
+CHANGES IN VERSION 1.3.7 [2017-10-25]
+-----------------------------------
+
+BUG FIXES
+
+    o Fixed bug where default 'matter_df' chunksize was tiny
+    o Changed 'datamode' for 'matter_df' from 'list' to 'virtual'
+
+CHANGES IN VERSION 1.3.6 [2017-10-20]
+-----------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Lists (ragged arrays) may now be heterogenous (elements
+        must still be vectors)
+    o More memory-efficient initialization of data on disk
+        when length(data) is 1
+    o Files are now created by default in constructors if
+        they do not already exist
+    o When coercing with 'as.matter', names and/or dimnames
+        are now retained
+
+
+CHANGES IN VERSION 1.3.5 [2017-10-18]
+-----------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Improved length/dim defaults when data is given to constructors
+
+BUG FIXES
+
+    o Trying to write to a read-only dataset now fails gracefully
+    o Fixed integer overflow when subsetting via subsetMatterMatrix
+
+CHANGES IN VERSION 1.3.4 [2017-8-8]
+-----------------------------------
+
+BUG FIXES
+
+    o Fixed bug where NAs did not propogate correctly for integers
+    o It is now an error when 'matter()' cannot infer data structure
+
+
+CHANGES IN VERSION 1.3.3 [2017-5-20]
+-----------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Added new vignettes with benchmarks and examples on real data
+
+BUG FIXES
+
+    o Fixed bug in delayed arithmetic operations with vectors
+
+
+CHANGES IN VERSION 1.3.2 [2017-5-15]
+-----------------------------------
+
+NEW FEATURES
+
+    o Added class 'matter_list' for homogenous lists (ragged arrays)
+    o Added class 'matter_str' for on-disk strings
+    o Added class 'matter_df' for on-disk data frames
+    o Added 'as.matter' for function coercing to matter objects
+
+CHANGES IN VERSION 1.3.1 [2017-4-27]
+-----------------------------------
+
+NEW FEATURES
+
+    o Updated base matter classes (matter_vec, matter_mat, matter_arr)
+        to support 'Arith' and 'Compare' group generics
+
+CHANGES IN VERSION 1.1.3 [2017-3-15]
+---------------------------------
+
+NEW FEATURES
+
+    o Added class 'drle' for delta-run-length encoding vectors
+    o Added '+', '-', '*', '/', '^', 'exp', 'log', 'log2', and 'log10'
+        as possible delayed operations to on-disk atoms
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Slots of 'atoms' class now use delta-run-length encoding
+    o Reduced metadata size by changing 'atoms' class to use
+        groups rather then relying on a 'list' of 'atoms'
+    o The 'scale' method for 'matter_mat' now matches 'scale.default'
+        more correctly when 'center = FALSE' and 'scale = TRUE'
+
+CHANGES IN VERSION 1.1.2 [2017-3-12]
+---------------------------------
+
+NEW FEATURES
+
+    o Added support for char, uchar, ushort, uint, and ulong datamodes
+    o Added support for raw (Rbyte) matter objects
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o S4 methods for matrix-specific summary statistics are
+        now only defined on matter_mat and its subclasses
+
+BUG FIXES
+
+    o Dramatically improved speed of matrix multiplication 
+
+CHANGES IN VERSION 1.1.1 [2016-11-29]
+---------------------------------
+
+NEW FEATURES
+
+    o Added 'crossprod' (t(x) %*% y) and 'tcrossprod' (x %*% t(y)) methods
+    o Added 'atomdata' accessor method, for which 'adata' is now an alias
+
+BUG FIXES
+
+    o Added S3 versions of some S4 methods to fix scoping issues
+    o Removed Cardinal package from Suggests to avoid circular dependency
+    o Reduced memory consumption in bigglm-matter method
+
+CHANGES IN VERSION 0.99.11 [2016-10-11]
+---------------------------------
+
+BUG FIXES
+
+    o Updated documentation details.
+
+CHANGES IN VERSION 0.99.10 [2016-10-11]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Updated vignettes with installation instructions, faster build time
+    o Added 'adata' method for accessing 'matter' class @data slot
+
+CHANGES IN VERSION 0.99.9 [2016-10-5]
+---------------------------------
+
+NEW FEATURES
+
+    o Added delayed scaling and centering via 'scale' method
+    o Added 'prcomp' method for principal components analysis
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Renamed 'colSd' -> 'colSds', 'colVar' -> 'colVars', etc.
+    o Renamed 'filepaths' -> 'paths' and 'file_id' -> 'source_id'
+    o Moved 'irlba' from Suggests to Imports to support new 'prcomp' method
+    o Updated vignette to use new 'prcomp' method in the PCA example
+
+BUG FIXES
+
+    o Fixed bug when combining 'matter' objects with multiple data sources
+
+CHANGES IN VERSION 0.99.8 [2016-10-3]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o In S4 class 'atoms', slot 'file_id' is now type 'integer' to save space
+    o In S4 class 'atoms', slot 'datamode' is now type 'integer' to save space
+    o More comprehensive error messages in constructors for S4 classes
+
+CHANGES IN VERSION 0.99.7 [2016-10-1]
+---------------------------------
+
+BUG FIXES
+
+    o Try to fix namespace std::isnan scoping issues on Windows
+
+CHANGES IN VERSION 0.99.6 [2016-10-1]
+---------------------------------
+
+BUG FIXES
+
+    o Fixed handling of NA, NaN, Inf, and -Inf during C type coercion
+    o Improved handling of NA, NaN, Inf, and -Inf in summary stats
+    o Fixed handling of NAs in matrix multiplication for integers
+
+CHANGES IN VERSION 0.99.5 [2016-9-27]
+---------------------------------
+
+BUG FIXES
+
+    o Fixed .Call native routine registration for C++ methods
+    o Added "C_" prefix for C++ methods called through .Call
+
+CHANGES IN VERSION 0.99.4 [2016-9-27]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Added .Call native routine registration for C++ methods
+
+CHANGES IN VERSION 0.99.3 [2016-9-27]
+---------------------------------
+
+BUG FIXES
+
+    o Import generics from S4Vectors for 'colMeans', 'colSums',
+        'rowMeans', and 'rowSums'
+    o Cleaned up method signatures and class unions
+
+CHANGES IN VERSION 0.99.2 [2016-9-26]
+---------------------------------
+
+BUG FIXES
+
+    o Cleaned up double assignments in C++ code
+
+CHANGES IN VERSION 0.99.1 [2016-9-26]
+---------------------------------
+
+BUG FIXES
+
+    o Version bump for Bioconductor build system
+
+CHANGES IN VERSION 0.99.0 [2016-9-26]
+---------------------------------
+
+BUG FIXES
+
+    o Updated PCA example in vignette (irlba now requires 'mult'
+        argument to be non-missing for non-C execution)
+    o Added irlba unit test
+
+CHANGES IN VERSION 0.6 [2016-9-25]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Updated maintainer and author email address
+
+BUG FIXES
+
+    o Fixed bug in rowVar for matter_matc
+
+CHANGES IN VERSION 0.5 [2016-9-25]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Updated documentation with examples and added unit tests
+
+BUG FIXES
+
+    o Fixed matrix multiplication on mixed data types (int x double)
+
+CHANGES IN VERSION 0.4 [2016-8-3]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Added support for class-preserving subsetting of 'matter'
+         matrices with 'drop=NA' argument for Cardinal compatibility.
+    o Added new 'show' method for 'matter' vectors and matrices showing
+        their size in in-memory and size on disk.
+
+CHANGES IN VERSION 0.3 [2016-8-2]
+---------------------------------
+
+NEW FEATURES
+
+    o Added C++ class 'MatterAccessor' for iterating through.
+    	a buffered version of a 'matter' vector or matrix
+    o Added summary statistics including 'sum', 'mean', 'var',
+    	'sd', 'colSums', 'colMeans', 'colVar', 'colSd',
+    	'rowSums', 'rowMeans', 'rowVar', and 'rowSd'.
+    o Added support for 'apply' method for 'matter' matrices
+    o Added support for 'bigglm' linear regression.
+    o Added basic matrix multiplication for 'matter' matrices
+    	with an in-memory R matrix or vector.
+
+CHANGES IN VERSION 0.2 [2016-7-28]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Overhauled backend to use C++ classes 'Matter' and 'Atoms',
+        to maximizes use of sequential reads versus random reads.
+
+CHANGES IN VERSION 0.1 [2016-2-17]
+---------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o First rough implementation of matter including the
+        classes 'atoms' and 'matter', and subclasses 'matter_vec',
+        'matter_matc', 'matter_matr', with a C backend.

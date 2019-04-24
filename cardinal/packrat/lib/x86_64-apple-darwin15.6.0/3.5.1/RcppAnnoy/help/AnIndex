@@ -1,0 +1,11 @@
+RcppAnnoy-package	RcppAnnoy-package
+AnnoyAngular	RcppAnnoy-package
+AnnoyEuclidean	RcppAnnoy-package
+AnnoyHamming	RcppAnnoy-package
+AnnoyManhattan	RcppAnnoy-package
+RcppAnnoy	RcppAnnoy-package
+Rcpp_Annoy	RcppAnnoy-package
+Rcpp_AnnoyAngular-class	RcppAnnoy-package
+Rcpp_AnnoyEuclidean-class	RcppAnnoy-package
+Rcpp_AnnoyHamming-class	RcppAnnoy-package
+Rcpp_AnnoyManhattan-class	RcppAnnoy-package
