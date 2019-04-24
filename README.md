@@ -11,11 +11,9 @@ QuPath scripts are found in `qupath_dev/`:
     * `Extensions` > `ImageJ` > `Export region to ImageJ`
     * in ImageJ: `Plugins` > `Macros` > `Run`
 
-The general workflow for ImageJ and QuPath segmentation is as follows:  
-![alt text](inputs/IJ_workflow.png)  
+![summary](inputs/summary_fig.png)  
+__Figure 1.__ Workflow and example output for automated MxIF segmentation using QuPath. __A)__ Whole-slide tiling workflow as implemented in javascript macro. Each tile of image is processed for watershed maxima and intensity threshold in a single channel; resulting ROIs returned as QuPath annotations. __B)__ Binary image mask outputs in three MxIF channels, highlighting unique macro structures in the tissue.
 
-Whole-slide MxIF image processed using `qupath_dev/tile_aggROI.groovy` > `qupath_dev/indivROI_save.groovy` yields binary TIFF for channel of interest.  
-![alt text](inputs/DAPI_wholeslide_binmask.png)  
 ---
 #### Python Implementation
 ```bash
